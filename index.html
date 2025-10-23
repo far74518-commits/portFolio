@@ -705,7 +705,7 @@
                     <div class="logo-img">
                         <img src="img.jpeg" alt="Logo">
                     </div>
-                    <span>My</span>Port<span>folio</span>
+                    <span>FA</span>RMAN<span>Ali</span>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -730,7 +730,7 @@
                 <h1>Hi, I'm <span>Farman Ali</span></h1>
                 <p>I'm a passionate web developer with expertise in creating modern, responsive websites and
                     applications. I love turning complex problems into simple, beautiful designs.</p>
-                <a href="#portfolio" class="btn hero-btn">View My Work</a>
+                <a href="path/to/your-cv.pdf" class="btn hero-btn" download=".pdf">Download My CV</a>
             </div>
         </div>
     </section>
@@ -748,19 +748,76 @@
                 </div>
                 <div class="about-text">
                     <h3>Hello! I'm Farman Ali</h3>
-                    <p>I'm a passionate web developer with over 5 years of experience creating modern, responsive
-                        websites and applications. I specialize in front-end development but also have experience with
-                        back-end technologies.</p>
+                    <p>1. An enthusiastic IT student passionate about coding creativity and continuous learning.</p>
                     <p>My goal is to build products that provide pixel-perfect, performant experiences while writing
                         clean, readable, and scalable code.</p>
-                    <div class="skills">
-                        <span class="skill">HTML</span>
-                        <span class="skill">CSS</span>
-                        <span class="skill">JavaScript</span>
-                        <span class="skill">React</span>
-                        <span class="skill">PHP</span>
-                        <span class="skill">Python</span>
-                    </div>
+                    <style>
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    width: 120px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.skill i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.skill:nth-child(1) i { color: #E44D26; } /* HTML */
+.skill:nth-child(2) i { color: #264DE4; } /* CSS */
+.skill:nth-child(3) i { color: #F7DF1E; } /* JavaScript */
+.skill:nth-child(4) i { color: #61DAFB; } /* React */
+.skill:nth-child(5) i { color: #777BB4; } /* PHP */
+.skill:nth-child(6) i { color: #3776AB; } /* Python */
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="skills">
+    <span class="skill">
+        <i class="fab fa-html5"></i>
+        HTML
+    </span>
+    <span class="skill">
+        <i class="fab fa-css3-alt"></i>
+        CSS
+    </span>
+    <span class="skill">
+        <i class="fab fa-js-square"></i>
+        JavaScript
+    </span>
+    <span class="skill">
+        <i class="fab fa-react"></i>
+        React
+    </span>
+    <span class="skill">
+        <i class="fab fa-php"></i>
+        PHP
+    </span>
+    <span class="skill">
+        <i class="fab fa-python"></i>
+        Python
+    </span>
+</div>
                     <a href="#contact" class="btn" style="margin-top: 20px;">Contact Me</a>
                 </div>
             </div>
