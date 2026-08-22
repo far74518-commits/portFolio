@@ -1,0 +1,614 @@
+/* ===== Clean Code Interactive Showcase Section ===== */
+.code-showcase-section {
+    position: relative;
+    padding: var(--section-spacing, 120px) 0;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+/* High-tech grid & background atmosphere */
+.code-showcase-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(to right, rgba(0, 242, 254, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 254, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, #000 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, #000 40%, transparent 80%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.showcase-mesh-blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.showcase-mesh-blob.blob-left {
+    top: 20%;
+    left: -10%;
+    background: radial-gradient(circle, var(--secondary-color, #00f2fe), transparent 70%);
+}
+
+.showcase-mesh-blob.blob-right {
+    bottom: 15%;
+    right: -10%;
+    background: radial-gradient(circle, var(--accent-color, #7f00ff), transparent 70%);
+}
+
+.showcase-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Header */
+.showcase-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+/* Live Engine Badge */
+.live-engine-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 20px;
+    background: rgba(0, 242, 254, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--secondary-color, #00f2fe);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.18), inset 0 0 12px rgba(0, 242, 254, 0.08);
+    margin-bottom: 22px;
+    transition: var(--transition, all 0.3s ease);
+}
+
+.live-engine-badge:hover {
+    transform: translateY(-2px);
+    border-color: var(--secondary-color, #00f2fe);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.35);
+}
+
+.live-engine-badge .badge-terminal-icon {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-weight: 800;
+    color: var(--secondary-color, #00f2fe);
+    font-size: 0.95rem;
+}
+
+/* Showcase Title */
+.showcase-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--text-color, #f1f5f9);
+}
+
+.text-gradient-cyan-purple {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #7f00ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple-orange {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.showcase-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary, #94a3b8);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ===== VS Code Window Container ===== */
+.vscode-window {
+    background: #0d1117;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.7),
+        0 0 35px rgba(0, 242, 254, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vscode-window:hover {
+    border-color: rgba(0, 242, 254, 0.28);
+    box-shadow: 
+        0 30px 60px -12px rgba(0, 0, 0, 0.8),
+        0 0 45px rgba(0, 242, 254, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* VS Code Header Bar */
+.vsc-header {
+    background: #161b22;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Window controls & Studio title */
+.vsc-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.vsc-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vsc-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.vsc-dot.dot-red {
+    background-color: #ff5f56;
+    box-shadow: 0 0 8px rgba(255, 95, 86, 0.4);
+}
+
+.vsc-dot.dot-yellow {
+    background-color: #ffbd2e;
+    box-shadow: 0 0 8px rgba(255, 189, 46, 0.4);
+}
+
+.vsc-dot.dot-green {
+    background-color: #27c93f;
+    box-shadow: 0 0 8px rgba(39, 201, 63, 0.4);
+}
+
+.vsc-dots:hover .vsc-dot {
+    transform: scale(1.1);
+}
+
+.vsc-studio-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #c9d1d9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.3px;
+}
+
+.vsc-studio-title i {
+    color: #007acc;
+    font-size: 0.95rem;
+}
+
+/* Header Center: Tabs */
+.vsc-tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.vsc-tab {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #8b949e;
+    font-family: inherit;
+    font-size: 0.84rem;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.vsc-tab i {
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.vsc-tab[data-lang="flutter"] i { color: #54c5f8; }
+.vsc-tab[data-lang="react"] i { color: #61dafb; }
+.vsc-tab[data-lang="firebase"] i { color: #ffca28; }
+.vsc-tab[data-lang="python"] i { color: #4b8bbe; }
+
+.vsc-tab:hover {
+    color: #f0f6fc;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.vsc-tab.active {
+    background: rgba(0, 242, 254, 0.12);
+    border-color: rgba(0, 242, 254, 0.4);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+}
+
+.vsc-tab.active i {
+    transform: scale(1.1);
+}
+
+/* Header Right: Actions */
+.vsc-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vsc-btn {
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 7px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.25s ease;
+    border: 1px solid transparent;
+}
+
+.vsc-btn-run {
+    background: rgba(39, 201, 63, 0.15);
+    border-color: rgba(39, 201, 63, 0.4);
+    color: #3fb950;
+}
+
+.vsc-btn-run:hover {
+    background: rgba(39, 201, 63, 0.25);
+    border-color: #3fb950;
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(39, 201, 63, 0.35);
+    transform: translateY(-1px);
+}
+
+.vsc-btn-run.running {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.vsc-btn-run.running i {
+    animation: spinIcon 1s infinite linear;
+}
+
+@keyframes spinIcon {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.vsc-btn-copy {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #c9d1d9;
+    padding: 7px 12px;
+}
+
+.vsc-btn-copy:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.vsc-btn-copy.copied {
+    background: rgba(0, 242, 254, 0.2);
+    border-color: var(--secondary-color, #00f2fe);
+    color: var(--secondary-color, #00f2fe);
+}
+
+/* Breadcrumbs bar */
+.vsc-breadcrumbs-bar {
+    background: #0f141c;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 6px 18px;
+    font-size: 0.76rem;
+    font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+    color: #6e7681;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vsc-breadcrumbs-bar span.active-crumb {
+    color: #58a6ff;
+    font-weight: 500;
+}
+
+/* ===== Code Editor Viewport ===== */
+.vsc-editor-body {
+    position: relative;
+    background: #0a0d14;
+    min-height: 380px;
+    display: flex;
+    overflow-x: auto;
+}
+
+/* Line Numbers */
+.vsc-gutter {
+    user-select: none;
+    padding: 18px 12px 18px 18px;
+    text-align: right;
+    font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #484f58;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    background: #0a0d14;
+}
+
+/* Code Snippet Container */
+.vsc-code-area {
+    flex: 1;
+    padding: 18px 24px;
+    overflow-x: auto;
+}
+
+.vsc-code-pane {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.vsc-code-pane.active {
+    display: block;
+    opacity: 1;
+    animation: fadeInCode 0.35s ease forwards;
+}
+
+@keyframes fadeInCode {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.vsc-code-pane pre {
+    margin: 0;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    tab-size: 2;
+    color: #e6edf3;
+    white-space: pre;
+}
+
+/* Syntax Highlighting Tokens */
+.syn-kwd { color: #ff7b72; font-weight: 600; } /* Keywords: return, import, class, const, async */
+.syn-cls { color: #79c0ff; font-weight: 600; } /* Classes/Types: ProductRepository, Result, String */
+.syn-fn  { color: #d2a8ff; } /* Functions: fetchProducts, useHook, runTransaction */
+.syn-str { color: #a5d6ff; } /* Strings: 'api/v1', "success" */
+.syn-cmt { color: #8b949e; font-style: italic; } /* Comments */
+.syn-num { color: #f2cc60; } /* Numbers: 0.7, 500, 38 */
+.syn-ann { color: #ffa657; } /* Annotations / Decorators: @override, @app.post */
+.syn-prop{ color: #7ee787; } /* Properties / Parameters */
+.syn-tag { color: #7ee787; } /* HTML/JSX Tags */
+.syn-bool{ color: #ff7b72; font-weight: 600; } /* Boolean: true, false */
+
+/* ===== Live Terminal Drawer ===== */
+.vsc-terminal-drawer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #070a0f;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vsc-terminal-header {
+    background: #0d1117;
+    padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: #8b949e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.vsc-terminal-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+    color: #c9d1d9;
+}
+
+.vsc-terminal-title i {
+    color: var(--secondary-color, #00f2fe);
+}
+
+.vsc-terminal-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.74rem;
+    color: #3fb950;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #3fb950;
+    box-shadow: 0 0 6px #3fb950;
+    display: inline-block;
+}
+
+.vsc-terminal-body {
+    padding: 14px 18px;
+    font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: #8b949e;
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+.term-log {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.term-tag {
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+}
+
+.term-tag.tag-engine { background: rgba(0, 242, 254, 0.15); color: #00f2fe; }
+.term-tag.tag-exec   { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+.term-tag.tag-pass   { background: rgba(39, 201, 63, 0.15); color: #3fb950; }
+.term-tag.tag-info   { background: rgba(84, 197, 248, 0.15); color: #54c5f8; }
+
+.term-msg {
+    color: #e6edf3;
+}
+
+.term-msg.highlight {
+    color: #00f2fe;
+    font-weight: 600;
+}
+
+/* Toast for Copy Notification */
+.vsc-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(13, 17, 23, 0.95);
+    border: 1px solid var(--secondary-color, #00f2fe);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 242, 254, 0.25);
+    backdrop-filter: blur(12px);
+    font-size: 0.88rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 9999;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.vsc-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.vsc-toast i {
+    color: #3fb950;
+    font-size: 1.1rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 992px) {
+    .showcase-title {
+        font-size: 2.2rem;
+    }
+    
+    .vsc-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .vsc-tabs {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 6px;
+    }
+    
+    .vsc-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .showcase-title {
+        font-size: 1.85rem;
+    }
+    
+    .showcase-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .vsc-tab {
+        padding: 6px 12px;
+        font-size: 0.78rem;
+    }
+    
+    .vsc-gutter {
+        padding: 14px 8px 14px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .vsc-code-area {
+        padding: 14px 16px;
+    }
+    
+    .vsc-code-pane pre {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .showcase-title {
+        font-size: 1.55rem;
+    }
+    
+    .vsc-studio-title {
+        font-size: 0.78rem;
+    }
+    
+    .vsc-btn span {
+        display: none;
+    }
+    
+    .vsc-btn-run {
+        padding: 7px 12px;
+    }
+}

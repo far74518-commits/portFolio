@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farman Ali | Web Developer Portfolio</title>
+    <meta name="description"
+        content="Farman Ali is a passionate full-stack developer, Flutter developer, and Shopify & TikTok Shop expert specializing in modern, responsive websites, mobile apps, and e-commerce growth.">
+    <meta name="keywords"
+        content="Farman Ali, portfolio, frontend developer, web developer, Flutter developer, Shopify expert, TikTok shop expert, React, Python, SQL, mobile app development">
+    <meta name="author" content="Farman Ali">
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="6dW-d35RY6g--9aEkk7B-_UVNa_BJdCMKLR23YyliXI" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/hero-about.css">
+    <link rel="stylesheet" href="css/portfolio-contact.css">
+    <link rel="stylesheet" href="css/services-testimonials.css">
+    <link rel="stylesheet" href="css/code-showcase.css">
+</head>
+
+<body class="theme-light light-theme">
+    <!-- Dynamic Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="theme-light" class="theme-btn active" title="Light Mode"><i class="fas fa-sun"></i></button>
+        <button id="theme-cosmic" class="theme-btn" title="Cosmic Cyber Glow"><i class="fas fa-meteor"></i></button>
+        <button id="theme-nebula" class="theme-btn" title="Sunset Nebula Glow"><i class="fas fa-wand-magic-sparkles"></i></button>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header id="header" class="modern-header">
+        <div class="nav-container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <img src="img.jpeg" alt="Logo" class="nav-avatar">
+                    Farman<span>Ali</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#code-showcase">Code Showcase</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="javascript:void(0)" class="btn-nav" onclick="openCvModal()"><i class="fas fa-file-pdf"></i> View CV</a>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero modern-hero reveal" id="home">
+        <div class="mesh-bg">
+            <div class="mesh-blob blob-1"></div>
+            <div class="mesh-blob blob-2"></div>
+            <div class="mesh-blob blob-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span> Founder & Lead Developer
+                    </div>
+                    <h1>Crafting <br><span class="text-gradient typing-text">Modern Web Solutions</span><span
+                            class="typing-cursor">|</span></h1>
+                    <p>Hi, I'm <strong>Farman Ali</strong>. I build scalable full-stack web solutions, <strong>Flutter mobile apps</strong>, and high-converting e-commerce platforms as a <strong>Shopify &amp; TikTok Shop Expert</strong> using modern technologies like <strong>React, Python &amp; SQL</strong>.</p>
+
+                    <div class="skill-pills">
+                        <span class="skill-pill">HTML5</span>
+                        <span class="skill-pill">CSS3</span>
+                        <span class="skill-pill">React</span>
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">SQL</span>
+                        <span class="skill-pill">AI & ML</span>
+                        <span class="skill-pill">MS Office</span>
+                        <span class="skill-pill">Shopify</span>
+                        <span class="skill-pill">TikTok Shop</span>
+                        <span class="skill-pill">Flutter Developer</span>
+                    </div>
+
+                    <div class="hero-btns">
+                        <a href="#portfolio" class="btn-primary"><i class="fas fa-rocket"></i> Explore Projects</a>
+                        <a href="javascript:void(0)" class="btn-secondary" onclick="openCvModal()"><i class="fas fa-file-pdf"></i> Executive CV</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="modern-profile-card">
+                        <div class="card-image-wrap">
+                            <img src="img.jpeg" alt="Farman Ali">
+                        </div>
+                        <div class="card-info">
+                            <div class="card-info-header">
+                                <div>
+                                    <h4>Farman Ali</h4>
+                                    <p>Web Developer, AI Engineer, Flutter, Shopify & TikTok Shop Expert</p>
+                                </div>
+                                <span class="status-badge">Open to Work</span>
+                            </div>
+                            <div class="card-info-footer">
+                                <span><i class="fas fa-map-marker-alt"></i> Tandojam, Pakistan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section reveal" id="services">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 style="margin: 0 auto;">My <span class="text-gradient">Services</span></h2>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 10px auto;">Comprehensive digital
+                    solutions tailored to your business needs.</p>
+                <div class="mobile-swipe-indicator">
+                    <i class="fas fa-arrows-left-right"></i> Swipe horizontally &bull; 7 Services
+                </div>
+            </div>
+            <div class="services-wrapper">
+                <button class="services-nav-btn prev-btn" id="servicesPrevBtn" aria-label="Previous service"><i
+                        class="fas fa-chevron-left"></i></button>
+                <div class="services-grid" id="servicesGrid">
+                    <div class="service-card">
+                        <i class="fas fa-laptop-code service-icon"></i>
+                        <h3>Web Development</h3>
+                        <p>Modern, responsive, and performant web applications built with React and full-stack
+                            technologies.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-brain service-icon"></i>
+                        <h3>AI Integrations</h3>
+                        <p>High-impact AI architecture and intelligent automation integrated seamlessly into your
+                            products.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-paint-brush service-icon"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>Stunning, user-centric interfaces designed to provide premium and intuitive experiences.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-database service-icon"></i>
+                        <h3>Database Architecture</h3>
+                        <p>Scalable and secure database design optimized for speed and reliability using modern SQL.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fab fa-shopify service-icon"></i>
+                        <h3>Shopify Store</h3>
+                        <p>Complete Shopify store setup, customization, and e-commerce optimization.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fab fa-tiktok service-icon"></i>
+                        <h3>TikTok Shop Expert</h3>
+                        <p>Setup, management, and growth strategies for TikTok Shop to boost your sales.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-mobile-alt service-icon"></i>
+                        <h3>Flutter Development</h3>
+                        <p>Cross-platform mobile applications for iOS and Android with native interfaces.</p>
+                    </div>
+                </div>
+                <button class="services-nav-btn next-btn" id="servicesNextBtn" aria-label="Next service"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Competencies Section -->
+    <section class="about section reveal" id="about">
+        <div class="container">
+            <!-- Premium Location & About Grid -->
+            <div class="premium-about-grid">
+                <!-- Location Card -->
+                <div class="premium-card premium-location-card">
+                    <div class="location-header">
+                        <span class="location-badge"><i class="fas fa-layer-group"></i> ARCHITECTING DIGITAL
+                            SOLUTIONS</span>
+                    </div>
+                    <h3 class="location-title">Based in Ubauro, Sindh, Pakistan</h3>
+                    <p class="location-desc">I am a software engineer driven by a passion for clean code, responsive
+                        user experiences, and scalable software architecture. As a developer, I specialize in combining
+                        modern web frameworks with robust backend solutions.</p>
+                    <p class="location-desc">My expertise covers full-stack web applications using React, Python, PHP,
+                        MySQL, Flutter, Shopify, TikTok Shop, and modern CSS frameworks.</p>
+                </div>
+
+                <!-- Standards Card -->
+                <div class="premium-card premium-standards-card">
+                    <h4 class="standards-title">Engineering Standards</h4>
+                    <ul class="standards-list">
+                        <li><i class="fas fa-check-circle"></i> 100% Modular Clean Code Architecture</li>
+                        <li><i class="fas fa-check-circle"></i> Scalable & Secure Database Design</li>
+                        <li><i class="fas fa-check-circle"></i> Cross-Platform Responsive Web Experiences</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time API Integrations & State Sync</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Engineering Competencies -->
+            <div class="premium-competencies">
+                <div class="section-title text-center" style="margin-bottom: 40px; text-align: center;">
+                    <h2>Engineering <span class="text-gradient">Competencies</span></h2>
+                    <p style="color: var(--text-secondary); max-width: 600px; margin: 10px auto;">Interactive breakdown
+                        of full-stack web stacks, databases, and AI tools.</p>
+                </div>
+
+                <div class="competency-tabs">
+                    <button class="comp-tab active" data-tab="all">All Stack</button>
+                    <button class="comp-tab" data-tab="frontend">Web Frontend</button>
+                    <button class="comp-tab" data-tab="backend">Backend & Database</button>
+                    <button class="comp-tab" data-tab="mobile">Mobile App</button>
+                    <button class="comp-tab" data-tab="ai">AI & Tools</button>
+                    <button class="comp-tab" data-tab="ecommerce">E-commerce</button>
+                </div>
+
+                <div class="competency-grid">
+                    <!-- Card 1 -->
+                    <div class="comp-card" data-category="frontend">
+                        <div class="comp-header">
+                            <div>
+                                <h4 class="comp-title">React.js</h4>
+                                <span class="comp-category">Web Frontend</span>
+                            </div>
+                            <span class="comp-percent text-blue">90%</span>
+                        </div>
+                        <div class="comp-bar-bg">
+                            <div class="comp-bar-fill bg-blue" style="width: 90%;"></div>
+                        </div>
+                        <div class="comp-footer">
+                            <span class="comp-badge"><i class="fas fa-check-circle text-blue"></i> Production
+                                Verified</span>
+                            <span class="comp-badge badge-blue">Enterprise Standard</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="comp-card" data-category="frontend">
+                        <div class="comp-header">
+                            <div>
+                                <h4 class="comp-title">JavaScript (ES6+)</h4>
+                                <span class="comp-category">Web Frontend</span>
+                            </div>
+                            <span class="comp-percent text-blue">85%</span>
+                        </div>
+                        <div class="comp-bar-bg">
+                            <div class="comp-bar-fill bg-blue" style="width: 85%;"></div>
+                        </div>
+                        <div class="comp-footer">
+                            <span class="comp-badge"><i class="fas fa-check-circle text-blue"></i> Production
+                                Verified</span>
+                            <span class="comp-badge badge-blue">Enterprise Standard</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="comp-card" data-category="backend">
+                        <div class="comp-header">
+                            <div>
+                                <h4 class="comp-title">Python</h4>
+                                <span class="comp-category">Backend & Logic</span>
+                            </div>
+                            <span class="comp-percent text-green">85%</span>
+                        </div>
+                        <div class="comp-bar-bg">
+                            <div class="comp-bar-fill bg-green" style="width: 85%;"></div>
+                        </div>
+                        <div class="comp-footer">
+                            <span class="comp-badge"><i class="fas fa-check-circle text-green"></i> Production
+                                Verified</span>
+                            <span class="comp-badge badge-green">Enterprise Standard</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="comp-card" data-category="backend">
+                        <div class="comp-header">
+                            <div>
+                                <h4 class="comp-title">SQL / MySQL</h4>
+                                <span class="comp-category">Database</span>
+                            </div>
+                            <span class="comp-percent text-green">80%</span>
+                        </div>
+                        <div class="comp-bar-bg">
+                            <div class="comp-bar-fill bg-green" style="width: 80%;"></div>
+                        </div>
+                        <div class="comp-footer">
+                            <span class="comp-badge"><i class="fas fa-check-circle text-green"></i> Production
+                                Verified</span>
+                            <span class="comp-badge badge-green">Enterprise Standard</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="comp-card" data-category="backend">
+                        <div class="comp-header">
+                            <div>
+                                <h4 class="comp-title">PHP</h4>
+                                <span class="comp-category">Backend</span>
+                            </div>
+                            <span class="comp-percent text-purple">75%</span>
+                        </div>
+                        <div class="comp-bar-bg">
+                            <div class="comp-bar-fill bg-purple" style="width: 75%;"></div>
+                        </div>
+                        <div class="comp-footer">
+                            <span class="comp-badge"><i class="fas fa-check-circle text-purple"></i> Production
+                                Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="comp-card" data-category="ai">
+                        <div class="comp-header">
+                            <div>
+                                <h4 class="comp-title">AI & ML Fundamentals</h4>
+                                <span class="comp-category">Data & Analytics</span>
+                            </div>
+                            <span class="comp-percent text-orange">70%</span>
+                        </div>
+                        <div class="comp-bar-bg">
+                            <div class="comp-bar-fill bg-orange" style="width: 70%;"></div>
+                        </div>
+                        <div class="comp-footer">
+                            <span class="comp-badge"><i class="fas fa-check-circle text-orange"></i> Certified</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="comp-card" data-category="mobile">
+                        <div class="comp-header">
+                            <div>
+                                <h4 class="comp-title">Flutter / Dart</h4>
+                                <span class="comp-category">Mobile Development</span>
+                            </div>
+                            <span class="comp-percent text-blue">80%</span>
+                        </div>
+                        <div class="comp-bar-bg">
+                            <div class="comp-bar-fill bg-blue" style="width: 80%;"></div>
+                        </div>
+                        <div class="comp-footer">
+                            <span class="comp-badge"><i class="fas fa-check-circle text-blue"></i> Production
+                                Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="comp-card" data-category="ai">
+                        <div class="comp-header">
+                            <div>
+                                <h4 class="comp-title">Microsoft Office</h4>
+                                <span class="comp-category">Productivity Tools</span>
+                            </div>
+                            <span class="comp-percent text-green">95%</span>
+                        </div>
+                        <div class="comp-bar-bg">
+                            <div class="comp-bar-fill bg-green" style="width: 95%;"></div>
+                        </div>
+                        <div class="comp-footer">
+                            <span class="comp-badge"><i class="fas fa-check-circle text-green"></i> Expert Level</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="comp-card" data-category="ecommerce">
+                        <div class="comp-header">
+                            <div>
+                                <h4 class="comp-title">Shopify</h4>
+                                <span class="comp-category">E-commerce</span>
+                            </div>
+                            <span class="comp-percent text-purple">90%</span>
+                        </div>
+                        <div class="comp-bar-bg">
+                            <div class="comp-bar-fill bg-purple" style="width: 90%;"></div>
+                        </div>
+                        <div class="comp-footer">
+                            <span class="comp-badge"><i class="fas fa-check-circle text-purple"></i> Expert Level</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 10 -->
+                    <div class="comp-card" data-category="ecommerce">
+                        <div class="comp-header">
+                            <div>
+                                <h4 class="comp-title">TikTok Shop</h4>
+                                <span class="comp-category">E-commerce</span>
+                            </div>
+                            <span class="comp-percent text-orange">85%</span>
+                        </div>
+                        <div class="comp-bar-bg">
+                            <div class="comp-bar-fill bg-orange" style="width: 85%;"></div>
+                        </div>
+                        <div class="comp-footer">
+                            <span class="comp-badge"><i class="fas fa-check-circle text-orange"></i> Expert Level</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Code Interactive Showcase Section -->
+    <section class="code-showcase-section section reveal" id="code-showcase">
+        <div class="showcase-mesh-blob blob-left"></div>
+        <div class="showcase-mesh-blob blob-right"></div>
+        <div class="showcase-container">
+            <div class="showcase-header">
+                <div class="live-engine-badge">
+                    <span class="badge-terminal-icon">&gt;_</span> LIVE ARCHITECTURE ENGINE
+                </div>
+                <h2 class="showcase-title">
+                    Clean Code <span class="text-gradient-cyan-purple">Interactive</span><br>
+                    <span class="text-gradient-purple-orange">Showcase</span>
+                </h2>
+                <p class="showcase-subtitle">
+                    Inspect real production code snippets powering Flutter, React, and Firebase backend architectures.
+                </p>
+            </div>
+
+            <!-- VS Code Window -->
+            <div class="vscode-window">
+                <!-- Window Top Header -->
+                <div class="vsc-header">
+                    <div class="vsc-header-left">
+                        <div class="vsc-dots">
+                            <span class="vsc-dot dot-red" title="Close"></span>
+                            <span class="vsc-dot dot-yellow" title="Minimize"></span>
+                            <span class="vsc-dot dot-green" title="Maximize"></span>
+                        </div>
+                        <div class="vsc-studio-title">
+                            <i class="fas fa-code"></i> Farman_Ali_Studio &mdash; VSCode
+                        </div>
+                    </div>
+
+                    <!-- Language / Architecture Tabs -->
+                    <div class="vsc-tabs">
+                        <button class="vsc-tab active" data-lang="flutter" data-file="product_repository.dart" data-path="lib > architecture">
+                            <i class="fas fa-mobile-alt"></i> Flutter (Dart)
+                        </button>
+                        <button class="vsc-tab" data-lang="react" data-file="useArchitectureEngine.js" data-path="src > hooks">
+                            <i class="fab fa-react"></i> React.js
+                        </button>
+                        <button class="vsc-tab" data-lang="firebase" data-file="order_transaction.js" data-path="functions > services">
+                            <i class="fas fa-fire"></i> Firebase
+                        </button>
+                        <button class="vsc-tab" data-lang="python" data-file="ai_microservice.py" data-path="app > core">
+                            <i class="fab fa-python"></i> Python AI
+                        </button>
+                    </div>
+
+                    <!-- Window Actions -->
+                    <div class="vsc-actions">
+                        <button class="vsc-btn vsc-btn-run" id="runCodeBtn" title="Simulate execution in Architecture Engine">
+                            <i class="fas fa-play"></i> <span>Run Code</span>
+                        </button>
+                        <button class="vsc-btn vsc-btn-copy" id="copyCodeBtn" title="Copy clean snippet">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Breadcrumbs Bar -->
+                <div class="vsc-breadcrumbs-bar">
+                    <span><i class="far fa-folder-open"></i> workspace</span>
+                    <span>&gt;</span>
+                    <span id="vscPath">lib &gt; architecture</span>
+                    <span>&gt;</span>
+                    <span class="active-crumb" id="vscActiveFile"><i class="fas fa-file-code"></i> product_repository.dart</span>
+                </div>
+
+                <!-- Code Editor Body -->
+                <div class="vsc-editor-body">
+                    <!-- Line Numbers Gutter -->
+                    <div class="vsc-gutter" id="vscGutter">
+                        <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+                        <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+                        <div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+                        <div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
+                        <div>21</div><div>22</div><div>23</div><div>24</div>
+                    </div>
+
+                    <!-- Code Snippets Viewport -->
+                    <div class="vsc-code-area">
+                        <!-- Pane 1: Flutter (Dart) -->
+                        <div class="vsc-code-pane active" id="pane-flutter" data-code="// 🎯 Clean Architecture: Repository Pattern &amp; State Orchestration
+class ProductRepository implements IProductRepository {
+  final ApiClient _apiClient;
+  final LocalCache _cache;
+
+  ProductRepository({
+    required ApiClient apiClient,
+    required LocalCache cache,
+  })  : _apiClient = apiClient,
+        _cache = cache;
+
+  @override
+  Future&lt;Result&lt;List&lt;Product&gt;&gt;&gt; fetchFeaturedProducts() async {
+    try {
+      final cached = await _cache.getProducts();
+      if (cached.isNotEmpty) return Result.success(cached);
+
+      final response = await _apiClient.get('/api/v1/products/featured');
+      final products = (response.data as List)
+          .map((json) =&gt; Product.fromJson(json))
+          .toList();
+
+      await _cache.saveProducts(products);
+      return Result.success(products);
+    } catch (e, stackTrace) {
+      return Result.failure(AppException.from(e, stackTrace));
+    }
+  }
+}">
+                            <pre><code><span class="syn-cmt">// 🎯 Clean Architecture: Repository Pattern &amp; State Orchestration</span>
+<span class="syn-kwd">class</span> <span class="syn-cls">ProductRepository</span> <span class="syn-kwd">implements</span> <span class="syn-cls">IProductRepository</span> {
+  <span class="syn-kwd">final</span> <span class="syn-cls">ApiClient</span> <span class="syn-prop">_apiClient</span>;
+  <span class="syn-kwd">final</span> <span class="syn-cls">LocalCache</span> <span class="syn-prop">_cache</span>;
+
+  <span class="syn-cls">ProductRepository</span>({
+    <span class="syn-kwd">required</span> <span class="syn-cls">ApiClient</span> <span class="syn-prop">apiClient</span>,
+    <span class="syn-kwd">required</span> <span class="syn-cls">LocalCache</span> <span class="syn-prop">cache</span>,
+  })  : <span class="syn-prop">_apiClient</span> = <span class="syn-prop">apiClient</span>,
+        <span class="syn-prop">_cache</span> = <span class="syn-prop">cache</span>;
+
+  <span class="syn-ann">@override</span>
+  <span class="syn-cls">Future</span>&lt;<span class="syn-cls">Result</span>&lt;<span class="syn-cls">List</span>&lt;<span class="syn-cls">Product</span>&gt;&gt;&gt; <span class="syn-fn">fetchFeaturedProducts</span>() <span class="syn-kwd">async</span> {
+    <span class="syn-kwd">try</span> {
+      <span class="syn-kwd">final</span> <span class="syn-prop">cached</span> = <span class="syn-kwd">await</span> <span class="syn-prop">_cache</span>.<span class="syn-fn">getProducts</span>();
+      <span class="syn-kwd">if</span> (<span class="syn-prop">cached</span>.<span class="syn-prop">isNotEmpty</span>) <span class="syn-kwd">return</span> <span class="syn-cls">Result</span>.<span class="syn-fn">success</span>(<span class="syn-prop">cached</span>);
+
+      <span class="syn-kwd">final</span> <span class="syn-prop">response</span> = <span class="syn-kwd">await</span> <span class="syn-prop">_apiClient</span>.<span class="syn-fn">get</span>(<span class="syn-str">'/api/v1/products/featured'</span>);
+      <span class="syn-kwd">final</span> <span class="syn-prop">products</span> = (<span class="syn-prop">response</span>.<span class="syn-prop">data</span> <span class="syn-kwd">as</span> <span class="syn-cls">List</span>)
+          .<span class="syn-fn">map</span>((<span class="syn-prop">json</span>) =&gt; <span class="syn-cls">Product</span>.<span class="syn-fn">fromJson</span>(<span class="syn-prop">json</span>))
+          .<span class="syn-fn">toList</span>();
+
+      <span class="syn-kwd">await</span> <span class="syn-prop">_cache</span>.<span class="syn-fn">saveProducts</span>(<span class="syn-prop">products</span>);
+      <span class="syn-kwd">return</span> <span class="syn-cls">Result</span>.<span class="syn-fn">success</span>(<span class="syn-prop">products</span>);
+    } <span class="syn-kwd">catch</span> (<span class="syn-prop">e</span>, <span class="syn-prop">stackTrace</span>) {
+      <span class="syn-kwd">return</span> <span class="syn-cls">Result</span>.<span class="syn-fn">failure</span>(<span class="syn-cls">AppException</span>.<span class="syn-fn">from</span>(<span class="syn-prop">e</span>, <span class="syn-prop">stackTrace</span>));
+    }
+  }
+}</code></pre>
+                        </div>
+
+                        <!-- Pane 2: React.js -->
+                        <div class="vsc-code-pane" id="pane-react" data-code="// ⚡ Clean Architecture: Reactive State Engine with Dynamic Cache
+import { useState, useEffect, useCallback } from 'react';
+
+export const useArchitectureEngine = (apiEndpoint, options = {}) => {
+  const [state, setState] = useState({
+    data: null,
+    isLoading: true,
+    error: null,
+    latency: 0
+  });
+
+  const executePipeline = useCallback(async () => {
+    const startTime = performance.now();
+    try {
+      setState(prev => ({ ...prev, isLoading: true }));
+      const res = await fetch(apiEndpoint, {
+        headers: { 'Content-Type': 'application/json', ...options.headers }
+      });
+      if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
+      
+      const payload = await res.json();
+      const latency = Math.round(performance.now() - startTime);
+
+      setState({ data: payload, isLoading: false, error: null, latency });
+    } catch (err) {
+      setState({ data: null, isLoading: false, error: err.message, latency: 0 });
+    }
+  }, [apiEndpoint]);
+
+  useEffect(() => { executePipeline(); }, [executePipeline]);
+  return { ...state, refetch: executePipeline };
+};">
+                            <pre><code><span class="syn-cmt">// ⚡ Clean Architecture: Reactive State Engine with Dynamic Cache</span>
+<span class="syn-kwd">import</span> { <span class="syn-prop">useState</span>, <span class="syn-prop">useEffect</span>, <span class="syn-prop">useCallback</span> } <span class="syn-kwd">from</span> <span class="syn-str">'react'</span>;
+
+<span class="syn-kwd">export const</span> <span class="syn-fn">useArchitectureEngine</span> = (<span class="syn-prop">apiEndpoint</span>, <span class="syn-prop">options</span> = {}) =&gt; {
+  <span class="syn-kwd">const</span> [<span class="syn-prop">state</span>, <span class="syn-fn">setState</span>] = <span class="syn-fn">useState</span>({
+    <span class="syn-prop">data</span>: <span class="syn-bool">null</span>,
+    <span class="syn-prop">isLoading</span>: <span class="syn-bool">true</span>,
+    <span class="syn-prop">error</span>: <span class="syn-bool">null</span>,
+    <span class="syn-prop">latency</span>: <span class="syn-num">0</span>
+  });
+
+  <span class="syn-kwd">const</span> <span class="syn-fn">executePipeline</span> = <span class="syn-fn">useCallback</span>(<span class="syn-kwd">async</span> () =&gt; {
+    <span class="syn-kwd">const</span> <span class="syn-prop">startTime</span> = <span class="syn-prop">performance</span>.<span class="syn-fn">now</span>();
+    <span class="syn-kwd">try</span> {
+      <span class="syn-fn">setState</span>(<span class="syn-prop">prev</span> =&gt; ({ ...<span class="syn-prop">prev</span>, <span class="syn-prop">isLoading</span>: <span class="syn-bool">true</span> }));
+      <span class="syn-kwd">const</span> <span class="syn-prop">res</span> = <span class="syn-kwd">await</span> <span class="syn-fn">fetch</span>(<span class="syn-prop">apiEndpoint</span>, {
+        <span class="syn-prop">headers</span>: { <span class="syn-str">'Content-Type'</span>: <span class="syn-str">'application/json'</span>, ...<span class="syn-prop">options</span>.<span class="syn-prop">headers</span> }
+      });
+      <span class="syn-kwd">if</span> (!<span class="syn-prop">res</span>.<span class="syn-prop">ok</span>) <span class="syn-kwd">throw new</span> <span class="syn-cls">Error</span>(<span class="syn-str">`HTTP Error: ${<span class="syn-prop">res</span>.<span class="syn-prop">status</span>}`</span>);
+      
+      <span class="syn-kwd">const</span> <span class="syn-prop">payload</span> = <span class="syn-kwd">await</span> <span class="syn-prop">res</span>.<span class="syn-fn">json</span>();
+      <span class="syn-kwd">const</span> <span class="syn-prop">latency</span> = <span class="syn-cls">Math</span>.<span class="syn-fn">round</span>(<span class="syn-prop">performance</span>.<span class="syn-fn">now</span>() - <span class="syn-prop">startTime</span>);
+
+      <span class="syn-fn">setState</span>({ <span class="syn-prop">data</span>: <span class="syn-prop">payload</span>, <span class="syn-prop">isLoading</span>: <span class="syn-bool">false</span>, <span class="syn-prop">error</span>: <span class="syn-bool">null</span>, <span class="syn-prop">latency</span> });
+    } <span class="syn-kwd">catch</span> (<span class="syn-prop">err</span>) {
+      <span class="syn-fn">setState</span>({ <span class="syn-prop">data</span>: <span class="syn-bool">null</span>, <span class="syn-prop">isLoading</span>: <span class="syn-bool">false</span>, <span class="syn-prop">error</span>: <span class="syn-prop">err</span>.<span class="syn-prop">message</span>, <span class="syn-prop">latency</span>: <span class="syn-num">0</span> });
+    }
+  }, [<span class="syn-prop">apiEndpoint</span>]);
+
+  <span class="syn-fn">useEffect</span>(() =&gt; { <span class="syn-fn">executePipeline</span>(); }, [<span class="syn-fn">executePipeline</span>]);
+  <span class="syn-kwd">return</span> { ...<span class="syn-prop">state</span>, <span class="syn-prop">refetch</span>: <span class="syn-fn">executePipeline</span> };
+};</code></pre>
+                        </div>
+
+                        <!-- Pane 3: Firebase -->
+                        <div class="vsc-code-pane" id="pane-firebase" data-code="// 🔥 Firebase Cloud Architecture: Secure Atomic Transaction
+import { getFirestore, runTransaction, doc, serverTimestamp } from 'firebase/firestore';
+
+export async function processOrderTransaction(orderId, customerId, cartItems) {
+  const db = getFirestore();
+  const orderRef = doc(db, 'orders', orderId);
+  const userRef = doc(db, 'users', customerId);
+
+  return await runTransaction(db, async (transaction) => {
+    const userDoc = await transaction.get(userRef);
+    if (!userDoc.exists()) throw new Error(&quot;Customer profile not found!&quot;);
+
+    // Validate inventory & calculate total securely
+    let subtotal = 0;
+    for (const item of cartItems) {
+      const itemRef = doc(db, 'inventory', item.id);
+      const itemDoc = await transaction.get(itemRef);
+      if (itemDoc.data().stock &lt; item.quantity) {
+        throw new Error(`Insufficient stock for: ${item.name}`);
+      }
+      transaction.update(itemRef, { stock: itemDoc.data().stock - item.quantity });
+      subtotal += itemDoc.data().price * item.quantity;
+    }
+
+    // Commit atomic order record
+    transaction.set(orderRef, {
+      customerId,
+      totalAmount: subtotal,
+      status: 'CONFIRMED',
+      createdAt: serverTimestamp()
+    });
+
+    return { success: true, orderId, subtotal };
+  });
+}">
+                            <pre><code><span class="syn-cmt">// 🔥 Firebase Cloud Architecture: Secure Atomic Transaction</span>
+<span class="syn-kwd">import</span> { <span class="syn-prop">getFirestore</span>, <span class="syn-prop">runTransaction</span>, <span class="syn-prop">doc</span>, <span class="syn-prop">serverTimestamp</span> } <span class="syn-kwd">from</span> <span class="syn-str">'firebase/firestore'</span>;
+
+<span class="syn-kwd">export async function</span> <span class="syn-fn">processOrderTransaction</span>(<span class="syn-prop">orderId</span>, <span class="syn-prop">customerId</span>, <span class="syn-prop">cartItems</span>) {
+  <span class="syn-kwd">const</span> <span class="syn-prop">db</span> = <span class="syn-fn">getFirestore</span>();
+  <span class="syn-prop">const</span> <span class="syn-prop">orderRef</span> = <span class="syn-fn">doc</span>(<span class="syn-prop">db</span>, <span class="syn-str">'orders'</span>, <span class="syn-prop">orderId</span>);
+  <span class="syn-prop">const</span> <span class="syn-prop">userRef</span> = <span class="syn-fn">doc</span>(<span class="syn-prop">db</span>, <span class="syn-str">'users'</span>, <span class="syn-prop">customerId</span>);
+
+  <span class="syn-kwd">return await</span> <span class="syn-fn">runTransaction</span>(<span class="syn-prop">db</span>, <span class="syn-kwd">async</span> (<span class="syn-prop">transaction</span>) =&gt; {
+    <span class="syn-kwd">const</span> <span class="syn-prop">userDoc</span> = <span class="syn-kwd">await</span> <span class="syn-prop">transaction</span>.<span class="syn-fn">get</span>(<span class="syn-prop">userRef</span>);
+    <span class="syn-kwd">if</span> (!<span class="syn-prop">userDoc</span>.<span class="syn-fn">exists</span>()) <span class="syn-kwd">throw new</span> <span class="syn-cls">Error</span>(<span class="syn-str">"Customer profile not found!"</span>);
+
+    <span class="syn-cmt">// Validate inventory &amp; calculate total securely</span>
+    <span class="syn-kwd">let</span> <span class="syn-prop">subtotal</span> = <span class="syn-num">0</span>;
+    <span class="syn-kwd">for</span> (<span class="syn-kwd">const</span> <span class="syn-prop">item</span> <span class="syn-kwd">of</span> <span class="syn-prop">cartItems</span>) {
+      <span class="syn-kwd">const</span> <span class="syn-prop">itemRef</span> = <span class="syn-fn">doc</span>(<span class="syn-prop">db</span>, <span class="syn-str">'inventory'</span>, <span class="syn-prop">item</span>.<span class="syn-prop">id</span>);
+      <span class="syn-kwd">const</span> <span class="syn-prop">itemDoc</span> = <span class="syn-kwd">await</span> <span class="syn-prop">transaction</span>.<span class="syn-fn">get</span>(<span class="syn-prop">itemRef</span>);
+      <span class="syn-kwd">if</span> (<span class="syn-prop">itemDoc</span>.<span class="syn-fn">data</span>().<span class="syn-prop">stock</span> &lt; <span class="syn-prop">item</span>.<span class="syn-prop">quantity</span>) {
+        <span class="syn-kwd">throw new</span> <span class="syn-cls">Error</span>(<span class="syn-str">`Insufficient stock for: ${<span class="syn-prop">item</span>.<span class="syn-prop">name</span>}`</span>);
+      }
+      <span class="syn-prop">transaction</span>.<span class="syn-fn">update</span>(<span class="syn-prop">itemRef</span>, { <span class="syn-prop">stock</span>: <span class="syn-prop">itemDoc</span>.<span class="syn-fn">data</span>().<span class="syn-prop">stock</span> - <span class="syn-prop">item</span>.<span class="syn-prop">quantity</span> });
+      <span class="syn-prop">subtotal</span> += <span class="syn-prop">itemDoc</span>.<span class="syn-fn">data</span>().<span class="syn-prop">price</span> * <span class="syn-prop">item</span>.<span class="syn-prop">quantity</span>;
+    }
+
+    <span class="syn-cmt">// Commit atomic order record</span>
+    <span class="syn-prop">transaction</span>.<span class="syn-fn">set</span>(<span class="syn-prop">orderRef</span>, {
+      <span class="syn-prop">customerId</span>,
+      <span class="syn-prop">totalAmount</span>: <span class="syn-prop">subtotal</span>,
+      <span class="syn-prop">status</span>: <span class="syn-str">'CONFIRMED'</span>,
+      <span class="syn-prop">createdAt</span>: <span class="syn-fn">serverTimestamp</span>()
+    });
+
+    <span class="syn-kwd">return</span> { <span class="syn-prop">success</span>: <span class="syn-bool">true</span>, <span class="syn-prop">orderId</span>, <span class="syn-prop">subtotal</span> };
+  });
+}</code></pre>
+                        </div>
+
+                        <!-- Pane 4: Python AI -->
+                        <div class="vsc-code-pane" id="pane-python" data-code="# 🐍 Python Architecture: High-Performance Async AI Pipeline
+from fastapi import FastAPI, HTTPException, Depends
+from pydantic import BaseModel, Field
+import asyncio
+
+app = FastAPI(title=&quot;Farman AI Microservice&quot;, version=&quot;2.0.0&quot;)
+
+class InferenceRequest(BaseModel):
+    prompt: str = Field(..., min_length=3, max_length=1000)
+    temperature: float = Field(default=0.7, ge=0.0, le=1.0)
+
+@app.post(&quot;/api/v1/predict&quot;)
+async def run_ai_inference(request: InferenceRequest):
+    try:
+        # Asynchronous non-blocking tokenization &amp; inference
+        tokens = await asyncio.to_thread(preprocess_pipeline, request.prompt)
+        result = await ai_engine.generate_async(tokens, temp=request.temperature)
+        
+        return {
+            &quot;status&quot;: &quot;success&quot;,
+            &quot;data&quot;: result,
+            &quot;metrics&quot;: {&quot;tokens&quot;: len(tokens), &quot;confidence&quot;: 0.985}
+        }
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))">
+                            <pre><code><span class="syn-cmt"># 🐍 Python Architecture: High-Performance Async AI Pipeline</span>
+<span class="syn-kwd">from</span> <span class="syn-prop">fastapi</span> <span class="syn-kwd">import</span> <span class="syn-cls">FastAPI</span>, <span class="syn-cls">HTTPException</span>, <span class="syn-cls">Depends</span>
+<span class="syn-kwd">from</span> <span class="syn-prop">pydantic</span> <span class="syn-kwd">import</span> <span class="syn-cls">BaseModel</span>, <span class="syn-cls">Field</span>
+<span class="syn-kwd">import</span> <span class="syn-prop">asyncio</span>
+
+<span class="syn-prop">app</span> = <span class="syn-cls">FastAPI</span>(<span class="syn-prop">title</span>=<span class="syn-str">"Farman AI Microservice"</span>, <span class="syn-prop">version</span>=<span class="syn-str">"2.0.0"</span>)
+
+<span class="syn-kwd">class</span> <span class="syn-cls">InferenceRequest</span>(<span class="syn-cls">BaseModel</span>):
+    <span class="syn-prop">prompt</span>: <span class="syn-cls">str</span> = <span class="syn-cls">Field</span>(..., <span class="syn-prop">min_length</span>=<span class="syn-num">3</span>, <span class="syn-prop">max_length</span>=<span class="syn-num">1000</span>)
+    <span class="syn-prop">temperature</span>: <span class="syn-cls">float</span> = <span class="syn-cls">Field</span>(<span class="syn-prop">default</span>=<span class="syn-num">0.7</span>, <span class="syn-prop">ge</span>=<span class="syn-num">0.0</span>, <span class="syn-prop">le</span>=<span class="syn-num">1.0</span>)
+
+<span class="syn-ann">@app.post</span>(<span class="syn-str">"/api/v1/predict"</span>)
+<span class="syn-kwd">async def</span> <span class="syn-fn">run_ai_inference</span>(<span class="syn-prop">request</span>: <span class="syn-cls">InferenceRequest</span>):
+    <span class="syn-kwd">try</span>:
+        <span class="syn-cmt"># Asynchronous non-blocking tokenization &amp; inference</span>
+        <span class="syn-prop">tokens</span> = <span class="syn-kwd">await</span> <span class="syn-prop">asyncio</span>.<span class="syn-fn">to_thread</span>(<span class="syn-prop">preprocess_pipeline</span>, <span class="syn-prop">request</span>.<span class="syn-prop">prompt</span>)
+        <span class="syn-prop">result</span> = <span class="syn-kwd">await</span> <span class="syn-prop">ai_engine</span>.<span class="syn-fn">generate_async</span>(<span class="syn-prop">tokens</span>, <span class="syn-prop">temp</span>=<span class="syn-prop">request</span>.<span class="syn-prop">temperature</span>)
+        
+        <span class="syn-kwd">return</span> {
+            <span class="syn-str">"status"</span>: <span class="syn-str">"success"</span>,
+            <span class="syn-str">"data"</span>: <span class="syn-prop">result</span>,
+            <span class="syn-str">"metrics"</span>: {<span class="syn-str">"tokens"</span>: <span class="syn-fn">len</span>(<span class="syn-prop">tokens</span>), <span class="syn-str">"confidence"</span>: <span class="syn-num">0.985</span>}
+        }
+    <span class="syn-kwd">except</span> <span class="syn-cls">Exception</span> <span class="syn-kwd">as</span> <span class="syn-prop">exc</span>:
+        <span class="syn-kwd">raise</span> <span class="syn-cls">HTTPException</span>(<span class="syn-prop">status_code</span>=<span class="syn-num">500</span>, <span class="syn-prop">detail</span>=<span class="syn-fn">str</span>(<span class="syn-prop">exc</span>))</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Architecture Terminal Drawer -->
+                <div class="vsc-terminal-drawer">
+                    <div class="vsc-terminal-header">
+                        <div class="vsc-terminal-title">
+                            <i class="fas fa-terminal"></i> OUTPUT CONSOLE (Live Architecture Engine)
+                        </div>
+                        <div class="vsc-terminal-status" id="vscTermStatus">
+                            <span class="status-dot"></span> Engine Idle &bull; Ready to Execute
+                        </div>
+                    </div>
+                    <div class="vsc-terminal-body" id="vscTerminalOutput">
+                        <div class="term-log">
+                            <span class="term-tag tag-engine">SYSTEM</span>
+                            <span class="term-msg">Farman_Ali_Studio Live Architecture Engine initialized. Ready to compile.</span>
+                        </div>
+                        <div class="term-log">
+                            <span class="term-tag tag-info">INFO</span>
+                            <span class="term-msg">Click &ldquo;Run Code&rdquo; to simulate compilation, tests, and production benchmarking.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume / Education & Certifications Section -->
+    <section class="modern-resume-section reveal" id="resume">
+        <div class="container">
+            <!-- CV Preview Banner Card -->
+            <div class="cv-banner-card">
+                <div class="cv-banner-info">
+                    <div class="cv-banner-icon-wrapper">
+                        <i class="fas fa-file-pdf cv-banner-icon"></i>
+                    </div>
+                    <div class="cv-banner-text">
+                        <h4>Farman Ali &mdash; Official Curriculum Vitae (CV)</h4>
+                        <p>View or download the official executive CV detailing my full-stack web projects, BS IT education, skills summary, and technical experience.</p>
+                    </div>
+                </div>
+                <div class="cv-banner-btns">
+                    <button type="button" onclick="openCvModal()" class="btn-primary btn-cv-view-main">
+                        <i class="fas fa-eye"></i> View Full CV Image / PDF
+                    </button>
+                    <a href="farman-ali-cv.pdf" download="Farman_Ali_CV.pdf" class="btn-secondary btn-cv-download-main">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+
+            <div class="resume-grid">
+                <!-- Education Column -->
+                <div class="resume-column w-100 mb-40">
+                    <div class="premium-education-card">
+                        <div class="edu-header">
+                            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="edu-title-wrapper">
+                                <h3 class="edu-title">Bachelor of Science in Information Technology (BS IT)</h3>
+                                <p class="edu-university">Sindh Agriculture University Tandojam</p>
+                            </div>
+                        </div>
+                        <div class="edu-date-pill">2025 - Present</div>
+                        <p class="edu-description">Comprehensive study in Software Engineering, Web Development
+                            (React/PHP), Database Systems (SQL), Data Structures, and Computer Networking.</p>
+
+                        <div class="edu-grid">
+                            <div class="edu-grid-item"><i class="far fa-check-circle"></i> Software Engineering &
+                                Systems Architecture</div>
+                            <div class="edu-grid-item"><i class="far fa-check-circle"></i> Web Development (React, PHP,
+                                JS, HTML/CSS)</div>
+                            <div class="edu-grid-item"><i class="far fa-check-circle"></i> Database Systems (SQL, MySQL)
+                            </div>
+                            <div class="edu-grid-item"><i class="far fa-check-circle"></i> Python Programming & AI
+                                Fundamentals</div>
+                            <div class="edu-grid-item"><i class="far fa-check-circle"></i> Data Structures, Algorithms &
+                                OOP</div>
+                            <div class="edu-grid-item"><i class="far fa-check-circle"></i> Computer Networking</div>
+                            <div class="edu-grid-item"><i class="far fa-check-circle"></i> Shopify</div>
+                            <div class="edu-grid-item"><i class="far fa-check-circle"></i> TikTok Shop</div>
+                            <div class="edu-grid-item"><i class="far fa-check-circle"></i> Flutter Developer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Column -->
+                <div class="resume-column">
+                    <div class="resume-header">
+                        <i class="fas fa-certificate header-icon-blue"></i>
+                        <h3>Certifications & Awards</h3>
+                    </div>
+
+                    <div class="resume-card border-red cert-card"
+                        onclick="openCertModal('ai-fundamentals-cert.jpg', 'AI Fundamentals - Google (Coursera)', 'https://coursera.org/verify/POFK2LV3PL6Q')">
+                        <h4>AI Fundamentals</h4>
+                        <p class="resume-subtitle">Google (Coursera) | May 2026</p>
+                        <p class="resume-desc">Completed Google's AI Fundamentals course, gaining knowledge in
+                            artificial intelligence principles and applications.</p>
+                    </div>
+
+                    <div class="resume-card border-red cert-card"
+                        onclick="openCertModal('huawei-ict-cert.jpg', 'Certificate of Appreciation - Huawei ICT Competition 2025–26')">
+                        <h4>Certificate of Appreciation - Huawei ICT Competition</h4>
+                        <p class="resume-subtitle">Huawei ICT Academy | 2025-26</p>
+                        <p class="resume-desc">Recognized for organizing the Huawei ICT Competition at Sindh Agriculture
+                            University, fostering innovation among students.</p>
+                    </div>
+
+                    <div class="resume-card border-red cert-card"
+                        onclick="openCertModal('database-systems-cert.jpg', 'Certificate of Appreciation - Database Systems (ITC-304)')">
+                        <h4>Certificate of Appreciation - Database Systems</h4>
+                        <p class="resume-subtitle">Information Technology Centre, SAU Tandojam | Oct 2025</p>
+                        <p class="resume-desc">Awarded for actively participating in the Presentation Competition of
+                            Database Systems (ITC-304).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio section reveal" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Portfolio</h2>
+                <p style="text-align: justify;">Here are some of my recent projects that showcase my skills and
+                    expertise.</p>
+            </div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="app">App Development</button>
+                <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="E-commerce Website">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="https://github.com/far74518-commits/ecommerce-project" class="portfolio-link"
+                                    target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>E-commerce Website</h3>
+                        <p style="text-align: justify;">Modern e-commerce platform with responsive design, secure
+                            payment integration, and admin dashboard.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">HTML</span>
+                            <span class="portfolio-tag">CSS</span>
+                            <span class="portfolio-tag">JavaScript</span>
+                            <span class="portfolio-tag">PHP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="app">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Fitness Tracking App">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="https://github.com/far74518-commits/fitness-app" class="portfolio-link"
+                                    target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Fitness Tracking App</h3>
+                        <p style="text-align: justify;">Mobile application for tracking workouts, nutrition, and fitness
+                            goals with progress analytics.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">React</span>
+                            <span class="portfolio-tag">Node.js</span>
+                            <span class="portfolio-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="graphic">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Brand Identity Design">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="https://github.com/far74518-commits/brand-identity" class="portfolio-link"
+                                    target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Brand Identity Design</h3>
+                        <p style="text-align: justify;">Complete brand identity package including logo, color palette,
+                            typography, and marketing materials.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Illustrator</span>
+                            <span class="portfolio-tag">Photoshop</span>
+                            <span class="portfolio-tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Business Dashboard">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="https://github.com/far74518-commits/dashboard-project" class="portfolio-link"
+                                    target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Business Dashboard</h3>
+                        <p style="text-align: justify;">Interactive dashboard for visualizing business metrics,
+                            analytics, and real-time data.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">JavaScript</span>
+                            <span class="portfolio-tag">D3.js</span>
+                            <span class="portfolio-tag">API</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="app">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Recipe Sharing App">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="https://github.com/far74518-commits/recipe-app" class="portfolio-link"
+                                    target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Recipe Sharing App</h3>
+                        <p style="text-align: justify;">Social platform for sharing and discovering new recipes from
+                            around the world.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">React Native</span>
+                            <span class="portfolio-tag">Firebase</span>
+                            <span class="portfolio-tag">Redux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="graphic">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Marketing Materials">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="https://github.com/far74518-commits/marketing-materials" class="portfolio-link"
+                                    target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Marketing Materials</h3>
+                        <p style="text-align: justify;">Series of brochures, flyers, and social media graphics for a
+                            marketing campaign.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Canva</span>
+                            <span class="portfolio-tag">Photoshop</span>
+                            <span class="portfolio-tag">Illustrator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section reveal" id="testimonials">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 style="margin: 0 auto;">Client <span class="text-gradient">Testimonials</span></h2>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 10px auto;">What people say about my
+                    work and collaboration.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-text">"Farman completely transformed our digital presence. His attention to
+                        detail and modern design skills are unmatched. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">S</div>
+                        <div class="author-info">
+                            <h4>Sarah Jenkins</h4>
+                            <span>Product Manager</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-text">"Working with Farman was a breeze. He delivered a robust, scalable
+                        e-commerce platform ahead of schedule with flawless AI integration."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">M</div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <span>Tech Lead</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-text">"The custom dashboard he built gave us insights we never thought
+                        possible. Exceptional coding standards and clear communication."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">E</div>
+                        <div class="author-info">
+                            <h4>Emily Roberts</h4>
+                            <span>Startup Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section reveal" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <p style="text-align: justify;">Let's work together! Feel free to reach out for collaborations or just
+                    to say hello.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p style="text-align: justify;">I'm always interested in new opportunities and collaborations.
+                        Whether you have a project in mind or just want to say hello, feel free to reach out!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Tandojam, Sindh, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>far74518@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+92 322 2089877</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Enter subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Enter your message" rows="5"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-about">
+                    <h3>Farman Ali</h3>
+                    <p style="text-align: justify;">Passionate Full-Stack &amp; Flutter Developer and certified Shopify &amp; TikTok Shop Expert dedicated to building modern, high-converting, and scalable digital solutions.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/sardar.shar.397?mibextid=ZbWKwL" class="social-link"
+                            target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href=" https://whatsapp.com/dl/" class="social-link" target="_blank"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/farman_aly007?igsh=MXh3cGk1bjlqd29xcg==" class="social-link"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/farman-ali-4b7293390?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_a"
+                            class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/explore" class="social-link" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-links">
+                    <h3>My Services</h3>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">Shopify</a></li>
+                        <li><a href="#">TikTok Shop</a></li>
+                        <li><a href="#">Flutter Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p style="text-align: justify;">Subscribe to my newsletter for the latest updates and projects.</p>
+                    <form id="newsletterForm" class="newsletter-form-inline" onsubmit="return handleNewsletterSubmit(event)">
+                        <div class="newsletter-input-wrapper">
+                            <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Your Email Address" required autocomplete="email">
+                            <button type="submit" id="newsletterBtn" class="btn-newsletter-submit">
+                                <span>Subscribe</span> <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div id="newsletterMessage" class="newsletter-msg"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Farman Ali. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="cert-modal">
+        <span class="cert-modal-close" onclick="closeCertModal()">&times;</span>
+        <div class="cert-modal-wrapper">
+            <img class="cert-modal-content" id="certImage" alt="Certificate">
+            <div id="certCaption" class="cert-caption"></div>
+        </div>
+    </div>
+
+    <!-- CV Preview Modal -->
+    <div id="cvModal" class="cv-modal">
+        <div class="cv-modal-backdrop" onclick="closeCvModal()"></div>
+        <div class="cv-modal-content-wrapper">
+            <div class="cv-modal-header">
+                <div class="cv-header-left">
+                    <div class="cv-header-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="cv-header-text">
+                        <h3 class="cv-modal-title">Farman Ali &mdash; Curriculum Vitae</h3>
+                        <p class="cv-modal-subtitle">Web Developer &amp; IT Student | Executive Resume</p>
+                    </div>
+                </div>
+                <div class="cv-header-actions">
+                    <div class="cv-view-toggle">
+                        <button type="button" class="btn-cv-toggle active" id="btnCvToggleImg" onclick="switchCvView('img')"><i class="fas fa-image"></i> <span>Image</span></button>
+                        <button type="button" class="btn-cv-toggle" id="btnCvTogglePdf" onclick="switchCvView('pdf')"><i class="fas fa-file-pdf"></i> <span>PDF</span></button>
+                    </div>
+                    <a href="farman-ali-cv.pdf" download="Farman_Ali_CV.pdf" class="btn-cv-action btn-cv-download" title="Download PDF CV">
+                        <i class="fas fa-download"></i> <span>Download PDF</span>
+                    </a>
+                    <a href="farman-ali-cv.pdf" target="_blank" rel="noopener noreferrer" class="btn-cv-action btn-cv-external" title="Open in New Tab">
+                        <i class="fas fa-external-link-alt"></i> <span>Fullscreen</span>
+                    </a>
+                    <button class="cv-modal-close" onclick="closeCvModal()" title="Close">&times;</button>
+                </div>
+            </div>
+            <div class="cv-modal-body">
+                <div id="cvImgView" class="cv-view-pane active">
+                    <img src="farman-ali-cv.jpg" alt="Farman Ali CV" class="cv-image-display">
+                </div>
+                <div id="cvPdfView" class="cv-view-pane">
+                    <iframe src="farman-ali-cv.pdf#toolbar=1&navpanes=0&view=FitH" class="cv-pdf-iframe" title="Farman Ali CV Document"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification for Code Showcase -->
+    <div id="vscToast" class="vsc-toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="vscToastText">Code snippet copied to clipboard!</span>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

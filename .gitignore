@@ -1,0 +1,11 @@
+# Local environment / IDE
+.vscode/
+.idea/
+*.log
+
+# Temporary Python scripts
+convert_pdf.py
+
+# OS generated files
+Thumbs.db
+Desktop.ini
