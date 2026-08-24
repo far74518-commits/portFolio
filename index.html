@@ -52,7 +52,8 @@
           "image": "https://far74518-commits.github.io/portFolio/img.jpeg",
           "sameAs": [
             "https://www.linkedin.com/in/farman-ali-4b7293390",
-            "https://github.com/far74518-commits"
+            "https://github.com/far74518-commits",
+            "https://pakmosam.netlify.app/frontend/client/index.html"
           ],
           "knowsAbout": [
             "Web Development",
@@ -61,8 +62,21 @@
             "Python",
             "SQL & MySQL",
             "Shopify",
-            "TikTok Shop"
+            "TikTok Shop",
+            "Weather Platform API Integration"
           ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://pakmosam.netlify.app/frontend/client/index.html#app",
+          "name": "PakMosam - Commercial Weather Dashboard Platform",
+          "url": "https://pakmosam.netlify.app/frontend/client/index.html",
+          "applicationCategory": "WeatherApplication",
+          "operatingSystem": "Web",
+          "author": {
+            "@id": "https://far74518-commits.github.io/portFolio/#person"
+          },
+          "description": "Ultra-premium dark modern weather dashboard for Pakistan. Real-time conditions, 7-day forecast, interactive radar map, AQI smog tracking, and Urdu support."
         },
         {
           "@type": "ProfilePage",
@@ -987,6 +1001,30 @@ async def run_ai_inference(request: InferenceRequest):
                 <button class="filter-btn" data-filter="graphic">Graphic Design</button>
             </div>
             <div class="portfolio-grid">
+                <!-- PakMosam Commercial Weather Platform -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="PakMosam – Weather Dashboard Platform">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="https://pakmosam.netlify.app/frontend/client/index.html" class="portfolio-link"
+                                    target="_blank" title="Live App Link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>PakMosam – Weather Dashboard</h3>
+                        <p style="text-align: justify;">Ultra-premium commercial dark modern weather platform for Pakistan featuring real-time conditions, 7-day forecast, interactive radar maps, AQI smog tracking, and bilingual Urdu support.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">HTML5</span>
+                            <span class="portfolio-tag">CSS3</span>
+                            <span class="portfolio-tag">JavaScript</span>
+                            <span class="portfolio-tag">Leaflet API</span>
+                            <span class="portfolio-tag">Netlify</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="portfolio-item" data-category="web">
                     <div class="portfolio-img">
                         <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
