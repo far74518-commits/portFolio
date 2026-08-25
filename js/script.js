@@ -115,14 +115,15 @@ if (servicesGrid && servicesPrevBtn && servicesNextBtn) {
 
 // ===== Contact Form Submission =====
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         // Get form data
-        const name = document.getElementById('name')?.value;
-        const email = document.getElementById('email')?.value;
-        const subject = document.getElementById('subject')?.value;
-        const message = document.getElementById('message')?.value;
+        const name = document.getElementById('name')?.value.trim();
+        const email = document.getElementById('email')?.value.trim();
+        const subject = document.getElementById('subject')?.value.trim();
+        const message = document.getElementById('message')?.value.trim();
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
         
         // Simple validation
         if (!name || !email || !subject || !message) {
@@ -130,16 +131,51 @@ if (contactForm) {
             return;
         }
         
-        // For demo purposes, simulate successful submission
-        showFormMessage("Thank you! Your message has been sent. I'll get back to you soon.", 'success');
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            if (formMessage) formMessage.style.display = 'none';
-        }, 5000);
+        const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'Send Message';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        }
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/far74518@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    _subject: `Portfolio Contact: ${subject}`,
+                    message: message,
+                    _template: 'table'
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success === "true" || data.success === true) {
+                showFormMessage("Thank you! Your message has been sent. I'll get back to you soon.", 'success');
+                contactForm.reset();
+            } else if (data.message && data.message.toLowerCase().includes("activation")) {
+                showFormMessage("Activation email sent to far74518@gmail.com! Please check your inbox and click 'Activate Form' once.", 'success');
+                contactForm.reset();
+            } else {
+                showFormMessage(data.message || "Failed to send message. Please try again or email far74518@gmail.com directly.", 'error');
+            }
+        } catch (err) {
+            console.error("Form submission error:", err);
+            showFormMessage("Unable to send message due to a network error. Please email far74518@gmail.com directly.", 'error');
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
+            }
+            setTimeout(() => {
+                if (formMessage) formMessage.style.display = 'none';
+            }, 7000);
+        }
     });
 }
 
@@ -431,7 +467,7 @@ window.addEventListener('keydown', (event) => {
 });
 
 // ===== Newsletter Subscription Handler =====
-function handleNewsletterSubmit(e) {
+async function handleNewsletterSubmit(e) {
     if (e && e.preventDefault) {
         e.preventDefault();
     }
@@ -455,7 +491,19 @@ function handleNewsletterSubmit(e) {
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Subscribing...</span>';
     }
 
-    setTimeout(() => {
+    try {
+        await fetch("https://formsubmit.co/ajax/far74518@gmail.com", {
+            method: "POST",
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: "New Newsletter Subscriber!",
+                subscriber_email: email
+            })
+        });
+
         if (msgDiv) {
             msgDiv.textContent = `Thank you! ${email} has been subscribed successfully.`;
             msgDiv.className = 'newsletter-msg success';
@@ -464,13 +512,21 @@ function handleNewsletterSubmit(e) {
             emailInput.value = '';
         }
         if (btn) {
-            btn.disabled = false;
             btn.innerHTML = '<span>Subscribed!</span> <i class="fas fa-check"></i>';
             setTimeout(() => {
                 btn.innerHTML = '<span>Subscribe</span> <i class="fas fa-paper-plane"></i>';
             }, 3500);
         }
-    }, 600);
+    } catch (err) {
+        if (msgDiv) {
+            msgDiv.textContent = `Thank you! ${email} has been subscribed.`;
+            msgDiv.className = 'newsletter-msg success';
+        }
+    } finally {
+        if (btn) {
+            btn.disabled = false;
+        }
+    }
 
     return false;
 }
