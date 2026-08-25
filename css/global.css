@@ -423,24 +423,38 @@
         }
         
         @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden !important;
+                width: 100%;
+                max-width: 100vw;
+            }
+
+            .container {
+                width: 100% !important;
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+
             .navbar {
                 position: relative;
             }
             
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: calc(100vh - 70px);
                 background: var(--nav-bg);
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                padding-top: 60px;
-                gap: 30px;
+                padding-top: 40px;
+                gap: 20px;
                 transition: var(--transition-smooth);
-                backdrop-filter: blur(10px);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                overflow-y: auto;
             }
             
             .nav-links.active {
@@ -457,109 +471,188 @@
             }
             
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.1rem;
+                line-height: 1.25;
+                text-align: center !important;
             }
             
             h2 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+                line-height: 1.3;
+                text-align: center !important;
+            }
+
+            h3, h4, h5, h6 {
+                text-align: center !important;
+            }
+
+            p {
+                text-align: center !important;
             }
             
             .section {
-                padding: 80px 0;
+                padding: 50px 0;
             }
             
             .section-title {
-                margin-bottom: 50px;
+                margin-bottom: 30px;
+                text-align: center !important;
+            }
+
+            .section-title h2,
+            .section-title p {
+                text-align: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
             
             .portfolio-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
             
             .contact-form {
-                padding: 30px;
+                padding: 24px 16px;
+                text-align: center !important;
+            }
+
+            .contact-info,
+            .contact-details,
+            .contact-item {
+                text-align: center !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .contact-item {
+                flex-direction: column !important;
+                gap: 8px !important;
+            }
+
+            .contact-icon {
+                margin: 0 auto 8px auto !important;
             }
             
             .float-element {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+                width: 42px;
+                height: 42px;
+                font-size: 1rem;
             }
             
+            /* Position Theme Toggle cleanly at Bottom Left on Mobile to prevent content overlap */
             .theme-toggle {
-                top: 90px;
-                right: 15px;
-                flex-direction: column;
-                padding: 10px;
+                top: auto;
+                bottom: 20px;
+                left: 15px;
+                right: auto;
+                flex-direction: row;
+                padding: 4px 8px;
+                gap: 6px;
+                border-radius: 30px;
+                z-index: 999;
+            }
+
+            .theme-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+
+            .footer-content,
+            .footer-col {
+                text-align: center !important;
+                align-items: center !important;
+            }
+
+            .social-links {
+                justify-content: center !important;
+                margin: 0 auto !important;
             }
         }
         
         @media (max-width: 576px) {
             .container {
-                width: 95%;
-                padding: 0 15px;
+                width: 100%;
+                padding: 0 14px;
             }
             
             h1 {
-                font-size: 2.2rem;
+                font-size: 1.85rem;
             }
             
             h2 {
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
             
             h3 {
-                font-size: 1.6rem;
+                font-size: 1.3rem;
             }
             
             .hero-btns {
                 flex-direction: column;
                 align-items: center;
+                width: 100%;
+                gap: 12px;
             }
             
             .btn {
                 width: 100%;
-                max-width: 250px;
+                max-width: 280px;
                 text-align: center;
+                justify-content: center;
             }
             
             .profile-container {
-                width: 250px;
-                height: 250px;
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
             }
             
             .about-stats,
             .skills-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 30px;
             }
             
             .portfolio-filters {
-                gap: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 6px;
             }
             
             .filter-btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
+                padding: 7px 14px;
+                font-size: 0.82rem;
+                border-radius: 20px;
             }
             
             .scroll-top {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
                 bottom: 20px;
-                right: 20px;
+                right: 15px;
             }
         }
         
         @media (max-width: 400px) {
+            h1 {
+                font-size: 1.65rem;
+            }
+
+            h2 {
+                font-size: 1.45rem;
+            }
+
             .profile-container {
-                width: 220px;
-                height: 220px;
+                width: 180px;
+                height: 180px;
             }
             
             .float-element {
@@ -567,10 +660,10 @@
             }
             
             .portfolio-info {
-                padding: 20px;
+                padding: 16px 14px;
             }
             
             .contact-form {
-                padding: 25px 20px;
+                padding: 20px 14px;
             }
         }

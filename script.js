@@ -115,14 +115,15 @@ if (servicesGrid && servicesPrevBtn && servicesNextBtn) {
 
 // ===== Contact Form Submission =====
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         // Get form data
-        const name = document.getElementById('name')?.value;
-        const email = document.getElementById('email')?.value;
-        const subject = document.getElementById('subject')?.value;
-        const message = document.getElementById('message')?.value;
+        const name = document.getElementById('name')?.value.trim();
+        const email = document.getElementById('email')?.value.trim();
+        const subject = document.getElementById('subject')?.value.trim();
+        const message = document.getElementById('message')?.value.trim();
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
         
         // Simple validation
         if (!name || !email || !subject || !message) {
@@ -130,16 +131,51 @@ if (contactForm) {
             return;
         }
         
-        // For demo purposes, simulate successful submission
-        showFormMessage("Thank you! Your message has been sent. I'll get back to you soon.", 'success');
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            if (formMessage) formMessage.style.display = 'none';
-        }, 5000);
+        const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'Send Message';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        }
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/far74518@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    _subject: `Portfolio Contact: ${subject}`,
+                    message: message,
+                    _template: 'table'
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success === "true" || data.success === true) {
+                showFormMessage("Thank you! Your message has been sent. I'll get back to you soon.", 'success');
+                contactForm.reset();
+            } else if (data.message && data.message.toLowerCase().includes("activation")) {
+                showFormMessage("Activation email sent to far74518@gmail.com! Please check your inbox and click 'Activate Form' once.", 'success');
+                contactForm.reset();
+            } else {
+                showFormMessage(data.message || "Failed to send message. Please try again or email far74518@gmail.com directly.", 'error');
+            }
+        } catch (err) {
+            console.error("Form submission error:", err);
+            showFormMessage("Unable to send message due to a network error. Please email far74518@gmail.com directly.", 'error');
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
+            }
+            setTimeout(() => {
+                if (formMessage) formMessage.style.display = 'none';
+            }, 7000);
+        }
     });
 }
 
@@ -368,11 +404,57 @@ function closeCertModal() {
     }
 }
 
-// Close modal when clicking outside certificate content
+// ===== CV Modal Logic =====
+function openCvModal(event) {
+    if (event && event.preventDefault) {
+        event.preventDefault();
+    }
+    const modal = document.getElementById('cvModal');
+    if (modal) {
+        modal.classList.add('active');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeCvModal() {
+    const modal = document.getElementById('cvModal');
+    if (modal) {
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+function switchCvView(mode) {
+    const imgView = document.getElementById('cvImgView');
+    const pdfView = document.getElementById('cvPdfView');
+    const btnImg = document.getElementById('btnCvToggleImg');
+    const btnPdf = document.getElementById('btnCvTogglePdf');
+
+    if (mode === 'img') {
+        if (imgView) imgView.classList.add('active');
+        if (pdfView) pdfView.classList.remove('active');
+        if (btnImg) btnImg.classList.add('active');
+        if (btnPdf) btnPdf.classList.remove('active');
+    } else {
+        if (pdfView) pdfView.classList.add('active');
+        if (imgView) imgView.classList.remove('active');
+        if (btnPdf) btnPdf.classList.add('active');
+        if (btnImg) btnImg.classList.remove('active');
+    }
+}
+
+// Close modal when clicking outside content
 window.addEventListener('click', (event) => {
-    const modal = document.getElementById('certModal');
-    if (modal && event.target === modal) {
+    const certModal = document.getElementById('certModal');
+    const cvModal = document.getElementById('cvModal');
+    
+    if (certModal && event.target === certModal) {
         closeCertModal();
+    }
+    if (cvModal && (event.target === cvModal || event.target.classList.contains('cv-modal-backdrop'))) {
+        closeCvModal();
     }
 });
 
@@ -380,8 +462,74 @@ window.addEventListener('click', (event) => {
 window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         closeCertModal();
+        closeCvModal();
     }
 });
+
+// ===== Newsletter Subscription Handler =====
+async function handleNewsletterSubmit(e) {
+    if (e && e.preventDefault) {
+        e.preventDefault();
+    }
+    const emailInput = document.getElementById('newsletterEmail');
+    const msgDiv = document.getElementById('newsletterMessage');
+    const btn = document.getElementById('newsletterBtn');
+
+    if (!emailInput || !emailInput.value.trim() || !emailInput.value.includes('@')) {
+        if (msgDiv) {
+            msgDiv.textContent = 'Please enter a valid email address.';
+            msgDiv.className = 'newsletter-msg error';
+        }
+        return false;
+    }
+
+    const email = emailInput.value.trim();
+
+    // Show submitting state
+    if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Subscribing...</span>';
+    }
+
+    try {
+        await fetch("https://formsubmit.co/ajax/far74518@gmail.com", {
+            method: "POST",
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: "New Newsletter Subscriber!",
+                subscriber_email: email
+            })
+        });
+
+        if (msgDiv) {
+            msgDiv.textContent = `Thank you! ${email} has been subscribed successfully.`;
+            msgDiv.className = 'newsletter-msg success';
+        }
+        if (emailInput) {
+            emailInput.value = '';
+        }
+        if (btn) {
+            btn.innerHTML = '<span>Subscribed!</span> <i class="fas fa-check"></i>';
+            setTimeout(() => {
+                btn.innerHTML = '<span>Subscribe</span> <i class="fas fa-paper-plane"></i>';
+            }, 3500);
+        }
+    } catch (err) {
+        if (msgDiv) {
+            msgDiv.textContent = `Thank you! ${email} has been subscribed.`;
+            msgDiv.className = 'newsletter-msg success';
+        }
+    } finally {
+        if (btn) {
+            btn.disabled = false;
+        }
+    }
+
+    return false;
+}
 
 // ===== Initialize Everything on DOM Load =====
 window.addEventListener('DOMContentLoaded', () => {
@@ -694,3 +842,4 @@ function initCodeShowcase() {
         });
     }
 }
+

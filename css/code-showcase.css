@@ -575,33 +575,43 @@
     .showcase-subtitle {
         font-size: 0.95rem;
     }
+
+    .vsc-window {
+        border-radius: 12px;
+        width: 100%;
+    }
     
     .vsc-tab {
-        padding: 6px 12px;
-        font-size: 0.78rem;
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        flex-shrink: 0;
     }
     
     .vsc-gutter {
-        padding: 14px 8px 14px 12px;
-        font-size: 0.8rem;
+        padding: 12px 6px;
+        font-size: 0.75rem;
+        min-width: 32px;
     }
     
     .vsc-code-area {
-        padding: 14px 16px;
+        padding: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
     
     .vsc-code-pane pre {
-        font-size: 0.8rem;
+        font-size: 0.76rem;
+        line-height: 1.45;
     }
 }
 
 @media (max-width: 480px) {
     .showcase-title {
-        font-size: 1.55rem;
+        font-size: 1.5rem;
     }
     
     .vsc-studio-title {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
     }
     
     .vsc-btn span {
@@ -609,6 +619,15 @@
     }
     
     .vsc-btn-run {
-        padding: 7px 12px;
+        padding: 6px 10px;
+    }
+
+    .vsc-gutter {
+        display: none; /* Hide line numbers on very small screens to give max space for code */
+    }
+
+    .vsc-terminal {
+        padding: 10px;
+        max-height: 180px;
     }
 }
