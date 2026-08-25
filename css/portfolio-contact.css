@@ -931,10 +931,12 @@
             .cv-banner-card {
                 flex-direction: column;
                 align-items: flex-start;
+                padding: 20px 16px;
             }
             .cv-banner-btns {
                 width: 100%;
                 flex-direction: column;
+                gap: 10px;
             }
             .cv-banner-btns button,
             .cv-banner-btns a {
@@ -942,10 +944,38 @@
                 justify-content: center;
             }
             .cv-modal-content-wrapper {
-                width: 96vw;
-                height: 94vh;
+                width: 95vw;
+                height: 92vh;
+                padding: 12px;
+                border-radius: 16px;
             }
             .btn-cv-action span {
                 display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cv-banner-title h3 {
+                font-size: 1.25rem;
+            }
+            .cv-banner-title p {
+                font-size: 0.88rem;
+            }
+            .contact-details {
+                gap: 16px;
+            }
+            .contact-item {
+                gap: 12px;
+            }
+            .contact-text h4 {
+                font-size: 1rem;
+            }
+            .contact-text p {
+                font-size: 0.88rem;
+            }
+            .cert-modal-content-wrapper {
+                width: 95vw;
+                max-height: 90vh;
+                padding: 12px;
             }
         }
