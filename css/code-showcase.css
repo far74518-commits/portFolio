@@ -1,9 +1,10 @@
 /* ===== Clean Code Interactive Showcase Section ===== */
 .code-showcase-section {
     position: relative;
-    padding: var(--section-spacing, 120px) 0;
+    padding: var(--section-spacing, 100px) 0;
     overflow: hidden;
     background-color: transparent;
+    width: 100%;
 }
 
 /* High-tech grid & background atmosphere */
@@ -17,7 +18,7 @@
     background-image: 
         linear-gradient(to right, rgba(0, 242, 254, 0.04) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(0, 242, 254, 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-size: 30px 30px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, #000 40%, transparent 80%);
     -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, #000 40%, transparent 80%);
     pointer-events: none;
@@ -26,11 +27,11 @@
 
 .showcase-mesh-blob {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: min(500px, 70vw);
+    height: min(500px, 70vw);
     border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.25;
+    filter: blur(90px);
+    opacity: 0.22;
     pointer-events: none;
     z-index: 0;
 }
@@ -52,13 +53,15 @@
     z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 clamp(12px, 3.5vw, 24px);
+    box-sizing: border-box;
+    width: 100%;
 }
 
 /* Section Header */
 .showcase-header {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
 }
 
 /* Live Engine Badge */
@@ -66,41 +69,41 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 7px 20px;
+    padding: 6px 18px;
     background: rgba(0, 242, 254, 0.08);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(0, 242, 254, 0.35);
     border-radius: 50px;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--secondary-color, #00f2fe);
-    box-shadow: 0 0 20px rgba(0, 242, 254, 0.18), inset 0 0 12px rgba(0, 242, 254, 0.08);
-    margin-bottom: 22px;
+    box-shadow: 0 0 16px rgba(0, 242, 254, 0.15);
+    margin-bottom: 18px;
     transition: var(--transition, all 0.3s ease);
 }
 
 .live-engine-badge:hover {
     transform: translateY(-2px);
     border-color: var(--secondary-color, #00f2fe);
-    box-shadow: 0 0 25px rgba(0, 242, 254, 0.35);
+    box-shadow: 0 0 22px rgba(0, 242, 254, 0.3);
 }
 
 .live-engine-badge .badge-terminal-icon {
     font-family: 'Fira Code', 'JetBrains Mono', monospace;
     font-weight: 800;
     color: var(--secondary-color, #00f2fe);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 /* Showcase Title */
 .showcase-title {
-    font-size: 2.8rem;
+    font-size: clamp(1.65rem, 4.5vw, 2.7rem);
     font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 16px;
+    line-height: 1.22;
+    margin-bottom: 14px;
     color: var(--text-color, #f1f5f9);
 }
 
@@ -117,9 +120,9 @@
 }
 
 .showcase-subtitle {
-    font-size: 1.05rem;
+    font-size: clamp(0.92rem, 2vw, 1.05rem);
     color: var(--text-secondary, #94a3b8);
-    max-width: 680px;
+    max-width: 660px;
     margin: 0 auto;
     line-height: 1.6;
 }
@@ -128,7 +131,7 @@
 .vscode-window {
     background: #0d1117;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
+    border-radius: clamp(12px, 2vw, 18px);
     box-shadow: 
         0 25px 50px -12px rgba(0, 0, 0, 0.7),
         0 0 35px rgba(0, 242, 254, 0.12),
@@ -137,25 +140,25 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
 }
 
 .vscode-window:hover {
     border-color: rgba(0, 242, 254, 0.28);
     box-shadow: 
         0 30px 60px -12px rgba(0, 0, 0, 0.8),
-        0 0 45px rgba(0, 242, 254, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        0 0 45px rgba(0, 242, 254, 0.18);
 }
 
 /* VS Code Header Bar */
 .vsc-header {
     background: #161b22;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 12px 18px;
+    padding: 10px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
@@ -163,62 +166,45 @@
 .vsc-header-left {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
 }
 
 .vsc-dots {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .vsc-dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     display: inline-block;
-    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.vsc-dot.dot-red {
-    background-color: #ff5f56;
-    box-shadow: 0 0 8px rgba(255, 95, 86, 0.4);
-}
-
-.vsc-dot.dot-yellow {
-    background-color: #ffbd2e;
-    box-shadow: 0 0 8px rgba(255, 189, 46, 0.4);
-}
-
-.vsc-dot.dot-green {
-    background-color: #27c93f;
-    box-shadow: 0 0 8px rgba(39, 201, 63, 0.4);
-}
-
-.vsc-dots:hover .vsc-dot {
-    transform: scale(1.1);
-}
+.vsc-dot.dot-red { background-color: #ff5f56; }
+.vsc-dot.dot-yellow { background-color: #ffbd2e; }
+.vsc-dot.dot-green { background-color: #27c93f; }
 
 .vsc-studio-title {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 500;
     color: #c9d1d9;
     display: flex;
     align-items: center;
-    gap: 8px;
-    letter-spacing: 0.3px;
+    gap: 6px;
 }
 
 .vsc-studio-title i {
     color: #007acc;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 /* Header Center: Tabs */
 .vsc-tabs {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     background: rgba(0, 0, 0, 0.3);
     padding: 4px;
     border-radius: 10px;
@@ -230,21 +216,21 @@
     border: 1px solid transparent;
     color: #8b949e;
     font-family: inherit;
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     font-weight: 500;
-    padding: 7px 16px;
+    padding: 6px 14px;
     border-radius: 8px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     transition: all 0.25s ease;
     white-space: nowrap;
+    touch-action: manipulation;
 }
 
 .vsc-tab i {
-    font-size: 0.9rem;
-    transition: transform 0.2s ease;
+    font-size: 0.88rem;
 }
 
 .vsc-tab[data-lang="flutter"] i { color: #54c5f8; }
@@ -253,203 +239,178 @@
 .vsc-tab[data-lang="python"] i { color: #4b8bbe; }
 
 .vsc-tab:hover {
-    color: #f0f6fc;
-    background: rgba(255, 255, 255, 0.05);
+    color: #e6edf3;
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .vsc-tab.active {
-    background: rgba(0, 242, 254, 0.12);
-    border-color: rgba(0, 242, 254, 0.4);
-    color: #ffffff;
-    font-weight: 600;
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+    background: #1f293d;
+    color: #58a6ff;
+    border-color: rgba(88, 166, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.vsc-tab.active i {
-    transform: scale(1.1);
-}
-
-/* Header Right: Actions */
+/* Header Right: Run & Copy Action buttons */
 .vsc-actions {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .vsc-btn {
+    background: #21262d;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #c9d1d9;
     font-family: inherit;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    padding: 7px 15px;
+    padding: 6px 12px;
     border-radius: 8px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    transition: all 0.25s ease;
-    border: 1px solid transparent;
+    gap: 6px;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.vsc-btn:hover {
+    background: #30363d;
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
 }
 
 .vsc-btn-run {
-    background: rgba(39, 201, 63, 0.15);
-    border-color: rgba(39, 201, 63, 0.4);
-    color: #3fb950;
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.2) 0%, rgba(127, 0, 255, 0.2) 100%);
+    border-color: rgba(0, 242, 254, 0.4);
+    color: #00f2fe;
 }
 
 .vsc-btn-run:hover {
-    background: rgba(39, 201, 63, 0.25);
-    border-color: #3fb950;
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.35) 0%, rgba(127, 0, 255, 0.35) 100%);
+    border-color: #00f2fe;
     color: #ffffff;
-    box-shadow: 0 0 16px rgba(39, 201, 63, 0.35);
-    transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
 }
 
-.vsc-btn-run.running {
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-.vsc-btn-run.running i {
-    animation: spinIcon 1s infinite linear;
-}
-
-@keyframes spinIcon {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.vsc-btn-copy {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.12);
-    color: #c9d1d9;
-    padding: 7px 12px;
-}
-
-.vsc-btn-copy:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.25);
-    color: #ffffff;
-    transform: translateY(-1px);
-}
-
-.vsc-btn-copy.copied {
-    background: rgba(0, 242, 254, 0.2);
-    border-color: var(--secondary-color, #00f2fe);
-    color: var(--secondary-color, #00f2fe);
+.vsc-btn-run i {
+    color: #3fb950;
+    font-size: 0.75rem;
 }
 
 /* Breadcrumbs bar */
 .vsc-breadcrumbs-bar {
-    background: #0f141c;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 6px 18px;
-    font-size: 0.76rem;
+    background: #0d1117;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 6px 16px;
+    font-size: 0.75rem;
     font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
     color: #6e7681;
     display: flex;
     align-items: center;
     gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
 }
 
-.vsc-breadcrumbs-bar span.active-crumb {
-    color: #58a6ff;
+.vsc-breadcrumbs-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.vsc-breadcrumbs-bar .active-crumb {
+    color: #c9d1d9;
     font-weight: 500;
 }
 
-/* ===== Code Editor Viewport ===== */
+/* Editor Body */
 .vsc-editor-body {
-    position: relative;
-    background: #0a0d14;
-    min-height: 380px;
     display: flex;
-    overflow-x: auto;
+    min-height: 280px;
+    background: #0d1117;
+    position: relative;
+    width: 100%;
 }
 
-/* Line Numbers */
 .vsc-gutter {
-    user-select: none;
-    padding: 18px 12px 18px 18px;
-    text-align: right;
-    font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
-    font-size: 0.88rem;
-    line-height: 1.65;
-    color: #484f58;
+    background: #0d1117;
     border-right: 1px solid rgba(255, 255, 255, 0.05);
-    background: #0a0d14;
+    padding: 14px 8px;
+    font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: #484f58;
+    text-align: right;
+    user-select: none;
+    min-width: 36px;
+    flex-shrink: 0;
 }
 
-/* Code Snippet Container */
 .vsc-code-area {
     flex: 1;
-    padding: 18px 24px;
+    min-width: 0;
+    padding: 14px 16px;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
 }
 
 .vsc-code-pane {
     display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
 .vsc-code-pane.active {
     display: block;
-    opacity: 1;
-    animation: fadeInCode 0.35s ease forwards;
-}
-
-@keyframes fadeInCode {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 .vsc-code-pane pre {
     margin: 0;
-    font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
-    font-size: 0.88rem;
-    line-height: 1.65;
-    tab-size: 2;
+    font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.84rem;
+    line-height: 1.6;
     color: #e6edf3;
     white-space: pre;
+    overflow-x: visible;
 }
 
-/* Syntax Highlighting Tokens */
-.syn-kwd { color: #ff7b72; font-weight: 600; } /* Keywords: return, import, class, const, async */
-.syn-cls { color: #79c0ff; font-weight: 600; } /* Classes/Types: ProductRepository, Result, String */
-.syn-fn  { color: #d2a8ff; } /* Functions: fetchProducts, useHook, runTransaction */
-.syn-str { color: #a5d6ff; } /* Strings: 'api/v1', "success" */
-.syn-cmt { color: #8b949e; font-style: italic; } /* Comments */
-.syn-num { color: #f2cc60; } /* Numbers: 0.7, 500, 38 */
-.syn-ann { color: #ffa657; } /* Annotations / Decorators: @override, @app.post */
-.syn-prop{ color: #7ee787; } /* Properties / Parameters */
-.syn-tag { color: #7ee787; } /* HTML/JSX Tags */
-.syn-bool{ color: #ff7b72; font-weight: 600; } /* Boolean: true, false */
+/* Syntax Highlighting Colors */
+.syn-cmt { color: #8b949e; font-style: italic; }
+.syn-kwd { color: #ff7b72; font-weight: 600; }
+.syn-cls { color: #ffa657; font-weight: 600; }
+.syn-fn  { color: #d2a8ff; font-weight: 600; }
+.syn-str { color: #a5d6ff; }
+.syn-num { color: #79c0ff; }
+.syn-bool{ color: #ff7b72; }
+.syn-prop{ color: #7ee787; }
+.syn-ann { color: #ff7b72; }
 
-/* ===== Live Terminal Drawer ===== */
+/* Live Architecture Terminal Drawer */
 .vsc-terminal-drawer {
+    background: #090d13;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    background: #070a0f;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
 }
 
 .vsc-terminal-header {
-    background: #0d1117;
-    padding: 8px 18px;
+    background: #111620;
+    padding: 8px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.78rem;
-    color: #8b949e;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.76rem;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .vsc-terminal-title {
-    display: flex;
-    align-items: center;
-    gap: 8px;
     font-weight: 600;
     font-family: 'Fira Code', 'JetBrains Mono', monospace;
     letter-spacing: 0.5px;
     color: #c9d1d9;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .vsc-terminal-title i {
@@ -460,7 +421,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     color: #3fb950;
 }
 
@@ -474,12 +435,12 @@
 }
 
 .vsc-terminal-body {
-    padding: 14px 18px;
+    padding: 12px 16px;
     font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     line-height: 1.6;
     color: #8b949e;
-    max-height: 160px;
+    max-height: 150px;
     overflow-y: auto;
 }
 
@@ -487,14 +448,16 @@
     margin-bottom: 4px;
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
+    word-break: break-word;
 }
 
 .term-tag {
     font-weight: 700;
-    padding: 1px 6px;
+    padding: 1px 5px;
     border-radius: 4px;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
+    flex-shrink: 0;
 }
 
 .term-tag.tag-engine { background: rgba(0, 242, 254, 0.15); color: #00f2fe; }
@@ -504,6 +467,7 @@
 
 .term-msg {
     color: #e6edf3;
+    overflow-wrap: break-word;
 }
 
 .term-msg.highlight {
@@ -514,20 +478,20 @@
 /* Toast for Copy Notification */
 .vsc-toast {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 24px;
+    right: 24px;
     background: rgba(13, 17, 23, 0.95);
     border: 1px solid var(--secondary-color, #00f2fe);
     color: #ffffff;
-    padding: 12px 20px;
+    padding: 10px 18px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 242, 254, 0.25);
     backdrop-filter: blur(12px);
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     z-index: 9999;
     transform: translateY(100px);
     opacity: 0;
@@ -541,24 +505,32 @@
 
 .vsc-toast i {
     color: #3fb950;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
-/* ===== Responsive Design ===== */
+/* ===== Responsive Design for Code Showcase ===== */
 @media (max-width: 992px) {
-    .showcase-title {
-        font-size: 2.2rem;
-    }
-    
     .vsc-header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 10px;
     }
     
+    .vsc-header-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+
     .vsc-tabs {
         width: 100%;
         overflow-x: auto;
-        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 3px;
+    }
+
+    .vsc-tabs::-webkit-scrollbar {
+        display: none;
     }
     
     .vsc-actions {
@@ -568,66 +540,41 @@
 }
 
 @media (max-width: 768px) {
-    .showcase-title {
-        font-size: 1.85rem;
-    }
-    
-    .showcase-subtitle {
-        font-size: 0.95rem;
-    }
-
-    .vsc-window {
-        border-radius: 12px;
-        width: 100%;
-    }
-    
     .vsc-tab {
-        padding: 6px 10px;
-        font-size: 0.75rem;
+        padding: 5px 10px;
+        font-size: 0.76rem;
         flex-shrink: 0;
-    }
-    
-    .vsc-gutter {
-        padding: 12px 6px;
-        font-size: 0.75rem;
-        min-width: 32px;
-    }
-    
-    .vsc-code-area {
-        padding: 12px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
     }
     
     .vsc-code-pane pre {
         font-size: 0.76rem;
-        line-height: 1.45;
+        line-height: 1.5;
+    }
+
+    .vsc-toast {
+        left: 14px;
+        right: 14px;
+        bottom: 20px;
+        justify-content: center;
+        text-align: center;
     }
 }
 
-@media (max-width: 480px) {
-    .showcase-title {
-        font-size: 1.5rem;
-    }
-    
-    .vsc-studio-title {
-        font-size: 0.75rem;
-    }
-    
-    .vsc-btn span {
-        display: none;
-    }
-    
-    .vsc-btn-run {
-        padding: 6px 10px;
-    }
-
+@media (max-width: 520px) {
     .vsc-gutter {
-        display: none; /* Hide line numbers on very small screens to give max space for code */
+        display: none; /* Hide line numbers on small screens to give max width to code */
     }
 
-    .vsc-terminal {
-        padding: 10px;
-        max-height: 180px;
+    .vsc-code-area {
+        padding: 10px 12px;
+    }
+
+    .vsc-code-pane pre {
+        font-size: 0.72rem;
+    }
+
+    .vsc-terminal-body {
+        padding: 8px 10px;
+        font-size: 0.72rem;
     }
 }

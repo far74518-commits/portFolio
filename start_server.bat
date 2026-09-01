@@ -1,7 +1,12 @@
 @echo off
-echo Starting local web server...
-echo Please do not close this window while you are viewing your website.
+title Farman Ali Portfolio Local Server
+echo ==========================================
+echo Starting Farman Ali Portfolio Web Server...
+echo ==========================================
 echo.
-start http://localhost:8000
-python -m http.server 8000
+powershell -ExecutionPolicy Bypass -File "%~dp0server.ps1"
+if %errorlevel% neq 0 (
+    echo Starting in default browser directly...
+    start "" "%~dp0index.html"
+)
 pause
