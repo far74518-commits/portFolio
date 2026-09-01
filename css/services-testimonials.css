@@ -2,24 +2,27 @@
 .services {
     background-color: var(--bg-secondary);
     position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .services-wrapper {
     position: relative;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 25px;
+    width: 100%;
 }
 
 .service-card {
     background: var(--card-bg);
     border-radius: var(--border-radius);
-    padding: 40px 30px;
+    padding: clamp(28px, 4vw, 40px) clamp(18px, 3vw, 28px);
     text-align: center;
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -39,13 +42,13 @@
     background: var(--gradient-primary);
     z-index: -1;
     transition: var(--transition);
-    opacity: 0.15;
+    opacity: 0.12;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     border-color: var(--secondary-color);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 242, 254, 0.25);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 242, 254, 0.2);
 }
 
 .service-card:hover::before {
@@ -53,28 +56,29 @@
 }
 
 .service-icon {
-    font-size: 3rem;
+    font-size: 2.8rem;
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     transition: var(--transition);
     display: inline-block;
 }
 
 .service-card:hover .service-icon {
-    transform: scale(1.15);
-    text-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+    transform: scale(1.12);
+    text-shadow: 0 0 18px rgba(0, 242, 254, 0.5);
 }
 
 .service-card h3 {
-    margin-bottom: 15px;
-    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
     color: var(--primary-color);
 }
 
 .service-card p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     line-height: 1.6;
+    margin-bottom: 0;
 }
 
 .services-nav-btn {
@@ -82,36 +86,37 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background: rgba(16, 24, 44, 0.85);
     border: 1px solid rgba(0, 242, 254, 0.4);
     color: var(--secondary-color);
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     z-index: 10;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     align-items: center;
     justify-content: center;
+    touch-action: manipulation;
 }
 
 .services-nav-btn:hover {
     background: var(--gradient-primary);
     color: #ffffff;
     border-color: transparent;
-    box-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
 }
 
 .services-nav-btn.prev-btn {
-    left: -12px;
+    left: -10px;
 }
 
 .services-nav-btn.next-btn {
-    right: -12px;
+    right: -10px;
 }
 
 .mobile-swipe-indicator {
@@ -123,25 +128,19 @@
     .mobile-swipe-indicator {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        margin-top: 15px;
-        padding: 6px 16px;
+        gap: 6px;
+        margin-top: 12px;
+        padding: 5px 14px;
         border-radius: 30px;
         background: rgba(0, 242, 254, 0.08);
         border: 1px solid rgba(0, 242, 254, 0.25);
         color: var(--secondary-color);
-        font-size: 0.82rem;
+        font-size: 0.8rem;
         font-weight: 500;
-        animation: pulseIndicator 2.5s infinite;
-    }
-
-    @keyframes pulseIndicator {
-        0%, 100% { transform: scale(1); opacity: 0.9; }
-        50% { transform: scale(1.04); opacity: 1; }
     }
 
     .services-wrapper {
-        margin-top: 20px;
+        margin-top: 15px;
         padding: 0;
     }
 
@@ -153,15 +152,15 @@
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
-        gap: 16px;
-        padding: 10px 15px 25px 15px;
+        gap: 14px;
+        padding: 8px 6px 20px 6px;
         margin: 0;
         scrollbar-width: thin;
-        scrollbar-color: rgba(0, 242, 254, 0.5) rgba(255, 255, 255, 0.05);
+        scrollbar-color: rgba(0, 242, 254, 0.4) rgba(255, 255, 255, 0.05);
     }
 
     .services-grid::-webkit-scrollbar {
-        height: 6px;
+        height: 5px;
     }
 
     .services-grid::-webkit-scrollbar-track {
@@ -172,15 +171,14 @@
     .services-grid::-webkit-scrollbar-thumb {
         background: var(--gradient-primary);
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
     }
 
     .service-card {
-        flex: 0 0 280px;
-        width: 280px;
+        flex: 0 0 clamp(250px, 78vw, 300px);
+        width: clamp(250px, 78vw, 300px);
         max-width: 82vw;
         scroll-snap-align: center;
-        padding: 32px 22px;
+        padding: 26px 18px;
         margin: 0;
     }
 
@@ -199,44 +197,46 @@
 
 @media (max-width: 480px) {
     .service-card {
-        flex: 0 0 260px;
-        width: 260px;
-        max-width: 85vw;
-        padding: 28px 18px;
+        flex: 0 0 clamp(230px, 76vw, 270px);
+        width: clamp(230px, 76vw, 270px);
+        padding: 22px 16px;
     }
 
     .services-nav-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 0.95rem;
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
     }
 
     .services-nav-btn.prev-btn {
-        left: -6px;
+        left: -4px;
     }
 
     .services-nav-btn.next-btn {
-        right: -6px;
+        right: -4px;
     }
 }
 
 /* ===== Testimonials Section ===== */
 .testimonials {
     background-color: var(--bg-color);
+    width: 100%;
+    overflow: hidden;
 }
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+    width: 100%;
 }
 
 .testimonial-card {
     background: var(--card-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    padding: 35px 30px;
+    padding: clamp(24px, 4vw, 35px) clamp(18px, 3vw, 28px);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
@@ -247,51 +247,59 @@
 .testimonial-card:hover {
     transform: translateY(-5px);
     border-color: var(--secondary-color);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 242, 254, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 242, 254, 0.18);
 }
 
 .quote-icon {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--secondary-color);
-    opacity: 0.2;
+    opacity: 0.4;
+    margin-bottom: 15px;
 }
 
 .testimonial-text {
-    font-style: italic;
-    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.7;
     color: var(--text-color);
-    font-size: 1.05rem;
+    margin-bottom: 20px;
+    font-style: italic;
 }
 
 .testimonial-author {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .author-img {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    object-fit: cover;
     background: var(--gradient-primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
 }
 
 .author-info h4 {
-    margin-bottom: 0;
-    font-size: 1.1rem;
+    margin: 0 0 2px 0;
+    font-size: 1rem;
+    color: var(--primary-color);
 }
 
 .author-info span {
+    font-size: 0.82rem;
     color: var(--text-secondary);
-    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 25px;
+    }
 }
